@@ -1,6 +1,9 @@
 #ifndef REMAKE_OCUPATION_H
 #define REMAKE_OCUPATION_H
+
+
 #include <string>
+
 using namespace std;
 
 class Ocupation {

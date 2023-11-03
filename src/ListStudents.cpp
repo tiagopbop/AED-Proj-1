@@ -1,7 +1,3 @@
-//
-// Created by loading on 03-11-2023.
-//
-
 #include "ListStudents.h"
 #include <string>
 #include <iostream>
@@ -9,7 +5,9 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+
 using namespace std;
+
 void ListStudents::check_class_students(string id) {
 
     ifstream file("../schedule/students_classes.csv");

@@ -1,11 +1,8 @@
 #include <iostream>
 #include "Student.h"
-#include "Class.h"
-#include "Course.h"
 #include "Changes.h"
 #include "Schedules_Checker.h"
 #include "Ocupation.h"
-#include "Schedules_Checker.h"
 #include "ListStudents.h"
 
 using namespace std;
@@ -13,19 +10,19 @@ using namespace std;
 int main() {
 
     cout << endl;
-    cout << "Please choose a number for the desired functionality:" << endl;
-    cout << '1' << ": Check student schedule" << endl;
-    cout << '2' << ": Check class schedule" << endl;
-    cout << '3' << ": Check students of a given class, UC or year" << endl;
-    cout << '4' << ": Check number of students in a given minimum number of UCs" << endl;
-    cout << '5' << ": Check occupation of a given class, UC or year" << endl;
-    cout << '6' << ": Check the UCs with greatest number of students" << endl;
-    cout << '7' << ": Check the classes with the greatest number of students" << endl;
-    cout << "8" << ": Make changes" << endl;
-    cout << '0' << ": Quit" << endl;
+    cout << "\033[1;34mPlease choose a number for the desired functionality:\033[0m\n";
+    cout << "\033[1;36m[ 1 ]\033[0m" << " Check student schedule" << endl;
+    cout << "\033[1;36m[ 2 ]\033[0m" << " Check class schedule" << endl;
+    cout << "\033[1;36m[ 3 ]\033[0m" << " Check students of a given class, UC or year" << endl;
+    cout << "\033[1;36m[ 4 ]\033[0m" << " Check number of students in a given minimum number of UCs" << endl;
+    cout << "\033[1;36m[ 5 ]\033[0m" << " Check occupation of a given class, UC or year" << endl;
+    cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
+    cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
+    cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
+    cout << "\033[1;36m[ 0 ]\033[0m" << " Quit" << endl;
     cout << endl;
 
-    cout << "Decision: ";
+    cout << "\033[1;34mDecision: \033[0m";
     int decision;
     cin >> decision;
     cout << endl;
@@ -34,9 +31,6 @@ int main() {
     string uc1;
     string cl1;
     string uc2;
-
-
-
     string in;
 
     while (true) {
@@ -44,40 +38,46 @@ int main() {
         switch (decision) {
             case 1:
 
-                cout << "Which student id: ";
+                cout << "\033[1;34mWhich student id: \033[0m";
                 cin >> in;
                 Schedules_Checker::check_schedule_student(in);
                 break;
 
             case 2:
 
-                cout << "Which class: ";
+                cout << "\033[1;34mWhich class: \033[0m";
                 cin >> in;
                 Schedules_Checker::check_schedule_class(in);
                 break;
 
             case 3:
 
-                cout << "Do you want to check a class, UC or year: ";
-                cin >> in;
+                cout << "\033[1;34mDo you want to check a class, UC or year?\033[0m\n";
+                cout << "\033[1;36m[ 1 ]\033[0m" << " Class" << endl;
+                cout << "\033[1;36m[ 2 ]\033[0m" << " UC" << endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl << endl;
 
-                if (in == "class") {
+                cout << "\033[1;34mDecision: \033[0m";
+                cin >> decision;
+                cout << endl;
 
-                    cout << "Which class: ";
+                if (decision == 1) {
+
+                    cout << "\033[1;34mWhich class: \033[0m";
                     cin >> in;
                     ListStudents::check_class_students(in);
 
                 }
-                else if (in == "UC") {
+                else if (decision == 2) {
 
-                    cout << "Which UC: ";
+                    cout << "\033[1;34mWhich UC: \033[0m";
                     cin >> in;
                     ListStudents::check_UC_students(in);
 
                 }
                 else {
 
-                    cout << "Which year: ";
+                    cout << "\033[1;34mWhich year: \033[0m";
                     cin >> in;
                     ListStudents::check_year_students(in);
 
@@ -86,33 +86,39 @@ int main() {
 
             case 4:
 
-                cout << "In how many UCs do you want to check for: ";
+                cout << "\033[1;34mIn how many UCs do you want to check for: \033[0m";
                 cin >> in;
                 Ocupation::check_students_by_UCs(in);
                 break;
 
             case 5:
 
-                cout << "Do you want to check the occupation of a class, UC or year: ";
-                cin >> in;
+                cout << "\033[1;34mDo you want to check the occupation of a class, UC or year: \033[0m";
+                cout << "\033[1;36m[ 1 ]\033[0m" << " Class" << endl;
+                cout << "\033[1;36m[ 2 ]\033[0m" << " UC" << endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl << endl;
 
-                if (in == "class") {
+                cout << "\033[1;34mDecision: \033[0m";
+                cin >> decision;
+                cout << endl;
 
-                    cout << "Which class: ";
+                if (decision == 1) {
+
+                    cout << "\033[1;34mWhich class: \033[0m";
                     cin >> in;
                     Ocupation::check_class_occupation(in);
 
                 }
-                else if (in == "UC") {
+                else if (decision == 2) {
 
-                    cout << "Which UC: ";
+                    cout << "\033[1;34mWhich UC: \033[0m";
                     cin >> in;
                     Ocupation::check_UC_occupation(in);
 
                 }
                 else {
 
-                    cout << "Which year: ";
+                    cout << "\033[1;34mWhich year: \033[0m";
                     cin >> in;
                     Ocupation::check_year_occupation(in);
 
@@ -121,77 +127,76 @@ int main() {
 
             case 6:
 
-                cout << "How many UCs would you like to be be presented with: ";
+                cout << "\033[1;34mHow many UCs would you like to be be presented with: \033[0m";
                 cin >> in;
                 Ocupation::greatest_number(in);
                 break;
 
             case 7:
 
-                cout << "How many classes would you like to be be presented with: ";
+                cout << "\033[1;34mHow many classes would you like to be be presented with: \033[0m";
                 cin >> in;
                 Ocupation::most_students(in);
                 break;
 
             case 8:
 
-                cout << "1: Join UC " <<endl;
-                cout << "2: Leave UC " <<endl;
-                cout << "3: Swap UC " << endl;
-                cout << "4: Swap class " << endl;
-                cout << "5: Execute 4/3 -> 2/1 -> 7/6 " << endl;
-                cout << endl;
-                cout << "Decision: ";
+                cout << "\033[1;36m[ 1 ]\033[0m" << " Join UC" <<endl;
+                cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
+                cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
+                cout << "\033[1;36m[ 5 ]\033[0m" << " Execute 4/3 -> 2/1 -> 7/6" << endl;
 
-                int dec;
-                cin >> dec;
+                cout << endl << "\033[1;34mDecision: \033[0m";
+                cin >> decision;
                 cout << endl;
 
-                switch (dec) {
+                switch (decision) {
                     case 1:
-                        cout << "Student ID: ";
+
+                        cout << "\033[1;34mStudent ID: \033[0m";
                         cin >> id1;
-                        cout << endl << "UC to join: ";
+                        cout << endl << "\033[1;34mUC to join: \033[0m";
                         cin >> uc1;
                         cout << endl;
                         Changes::call_joinuc(id1, uc1);
                         break;
 
                     case 2:
-                        cout << "Student ID: ";
+                        cout << "\033[1;34mStudent ID: \033[0m";
                         cin >> id1;
-                        cout << endl << "UC to leave: ";
+                        cout << endl << "\033[1;34mUC to leave: \033[0m";
                         cin >> uc1;
                         Changes::call_leaveuc(id1, uc1);
                         break;
                     case 3:
-                        cout << "Student ID: ";
+                        cout << "\033[1;34mStudent ID: \033[0m";
                         cin >> id1;
-                        cout << endl << "UC to leave: ";
+                        cout << endl << "\033[1;34mUC to leave: \033[0m";
                         cin >> uc1;
-                        cout << endl << "UC to join: ";
+                        cout << endl << "\033[1;34mUC to join: \033[0m";
                         cin >> uc2;
-                        cout << endl << "Class to join: ";
-                        cin >> cl1;
-                        Changes::call_swapuc(id1, uc1, uc2, cl1);
+                        Changes::call_swapuc(id1, uc1, uc2);
                         break;
 
                     case 4:
 
-                        cout << "Student ID: ";
+                        cout << "\033[1;34mStudent ID: \033[0m";
                         cin >> id1;
-                        cout << endl << "Desired UC: ";
+                        cout << endl << "\033[1;34mUC in question: \033[0m";
                         cin >> uc1;
-                        cout << endl << "Class to join: ";
-                        cin >> cl1;
-                        Changes::call_swapclass(id1, uc1, cl1);
+                        Changes::call_swapclass(id1, uc1);
                         break;
 
-                        /*case 5:
+                    /*case 5:
 
-                            Changes::call_multi(id1,id2,id3);
-                            break;*/
+                        Changes::call_multi(id1,id2,id3);
+                        break;*/
+
                     default:
+
+                        cout << endl;
+                        cerr << "Unrecognized option" << endl;
                         break;
                 }
                 break;
@@ -201,22 +206,28 @@ int main() {
                 cout << endl;
                 cerr << "Program closed" << endl;
                 return 0;
+
+            default:
+
+                cout << endl;
+                cerr << "Unrecognized option" << endl;
+                break;
         }
 
         cout << endl;
-        cout << "Wish to do anything else?" << endl;
-        cout << '1' << ": Check student schedule" << endl;
-        cout << '2' << ": Check class schedule" << endl;
-        cout << '3' << ": Check students of a given class, UC or year" << endl;
-        cout << '4' << ": Check number of students in a given minimum number of UCs" << endl;
-        cout << '5' << ": Check occupation of a given class, UC or year" << endl;
-        cout << '6' << ": Check the UCs with greatest number of students" << endl;
-        cout << '7' << ": Check the classes with the greatest number of students" << endl;
-        cout << "8" << ": Make changes" << endl;
-        cout << '0' << ": Quit" << endl;
+        cout << "\033[1;34mWish to do anything else?\033[0m\n";
+        cout << "\033[1;36m[ 1 ]\033[0m" << " Check student schedule" << endl;
+        cout << "\033[1;36m[ 2 ]\033[0m" << " Check class schedule" << endl;
+        cout << "\033[1;36m[ 3 ]\033[0m" << " Check students of a given class, UC or year" << endl;
+        cout << "\033[1;36m[ 4 ]\033[0m" << " Check number of students in a given minimum number of UCs" << endl;
+        cout << "\033[1;36m[ 5 ]\033[0m" << " Check occupation of a given class, UC or year" << endl;
+        cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
+        cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
+        cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
+        cout << "\033[1;36m[ 0 ]\033[0m" << " Quit" << endl;
         cout << endl;
 
-        cout << "Decision: ";
+        cout << "\033[1;34mDecision: \033[0m";
         cin >> decision;
     }
 }

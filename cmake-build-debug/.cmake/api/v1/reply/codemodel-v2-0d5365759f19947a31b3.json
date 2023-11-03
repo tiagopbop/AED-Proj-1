@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/loading/Desktop/AED/Remake/cmake-build-debug",
-		"source" : "/home/loading/Desktop/AED/Remake"
+		"build" : "/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug",
+		"source" : "/home/guaxinim/CLionProjects/Clean_AED/ProjAED"
 	},
 	"version" : 
 	{
