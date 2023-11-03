@@ -1,15 +1,12 @@
-//
-// Created by loading on 03-11-2023.
-//
-
 #ifndef REMAKE_LISTSTUDENTS_H
 #define REMAKE_LISTSTUDENTS_H
 
 
 #include <string>
 
-class ListStudents {
+using namespace std;
 
+class ListStudents {
 public:
     static void check_class_students(std::__cxx11::basic_string<char> id);
 

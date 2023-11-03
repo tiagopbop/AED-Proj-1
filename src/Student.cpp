@@ -1,5 +1,6 @@
 #include "Student.h"
 
+using namespace std;
 
 string Student::getStudentCode() {
     return StudentCode;

@@ -14,6 +14,16 @@ void Changes:: call_joinuc(string id, string uc) {
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
 
+    if (!file1.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return;
+    }
+
+    if (!file2.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return;
+    }
+
     string line;
     string word;
     string name;
@@ -100,7 +110,7 @@ void Changes:: call_joinuc(string id, string uc) {
         }
     }
     else {
-        cout << "You cannot join any more UC's (Max. 7)" << endl;
+        cout << "You cannot join any more UCs (Max. 7)" << endl;
     }
 }
 
@@ -108,17 +118,15 @@ void Changes::call_leaveuc(string id, string uc) {
 
 }
 
-void Changes::call_swapuc(string id, string ucl, string ucj, string cass) {
+void Changes::call_swapuc(string id, string ucl, string ucj) {
 
 }
 
-void Changes::call_swapclass(string id, string uc, string clas) {
+void Changes::call_swapclass(string id, string uc) {
 
 }
 
-void Changes::  call_multi(string id, string uc, string cass)
-{
-
+void Changes::call_multi(string id, string uc, string cass) {
 
 }
 
@@ -165,6 +173,16 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes.csv");
+
+    if (!file1.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return 0;
+    }
+
+    if (!file2.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return 0;
+    }
 
     string line1;
     string line2;
@@ -242,6 +260,11 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
         if (row1[0] == id) {
 
             ifstream file2("../schedule/classes.csv");
+
+            if (!file2.is_open()) {
+                cerr << "FAILED TO OPEN THE FILE" << endl;
+                return 0;
+            }
 
             getline(file2, line2);
 
