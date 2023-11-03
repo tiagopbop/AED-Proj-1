@@ -84,6 +84,7 @@ void Changes:: call_joinuc(string id, string uc) {
                 cin >> decision;
 
                 if (Changes::check_conflicts(classes[decision - 1], uc, id)) {
+                    
                     cout << endl << "You were assigned to this class successfully: " << classes[decision - 1] << endl;
                 }
                 else {
