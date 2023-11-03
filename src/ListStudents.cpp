@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void ListStudents::check_class_students(string id) {
+void ListStudents::check_class_students(string uc, string cc) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -25,7 +25,7 @@ void ListStudents::check_class_students(string id) {
     getline(file, line);
 
     cout << endl;
-    cout << "\033[1;32mClass \033[0m" << id << "\033[1;32m students:\033[0m" << endl;
+    cout << "\033[1;32mClass \033[0m" << cc << "\033[1;32m of UC \033[0m" << uc << "\033[1;32m students:\033[0m" << endl;
 
     while (getline(file, line)) {
 
@@ -46,7 +46,7 @@ void ListStudents::check_class_students(string id) {
 
         auto it = find(past_names.begin(), past_names.end(), row[1]);
 
-        if (row[3] == id && it == past_names.end()) {
+        if (row[3] == cc && row[2] == uc && it == past_names.end()) {
             past_names.push_back(row[1]);
             cout << row[1] << "\033[1;32m - \033[0m" << row[0] << endl;
         }
