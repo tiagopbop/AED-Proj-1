@@ -1,3 +1,3 @@
-/home/loading/Desktop/AED/Remake/cmake-build-debug/CMakeFiles/Remake.dir
-/home/loading/Desktop/AED/Remake/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/loading/Desktop/AED/Remake/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles/Remake.dir
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
