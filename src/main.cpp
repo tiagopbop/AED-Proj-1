@@ -19,7 +19,7 @@ int main() {
     cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
     cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
     cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
-    cout << "\033[1;36m[ 0 ]\033[0m" << " Quit" << endl;
+    cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
     cout << endl;
 
     cout << "\033[1;34mDecision: \033[0m";
@@ -224,7 +224,7 @@ int main() {
         cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
         cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
         cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
-        cout << "\033[1;36m[ 0 ]\033[0m" << " Quit" << endl;
+        cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
         cout << endl;
 
         cout << "\033[1;34mDecision: \033[0m";

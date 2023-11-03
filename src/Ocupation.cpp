@@ -74,7 +74,7 @@ void Ocupation::most_students(string in) {
             }
         }
         topWord = words[topIndex];
-        cout << topCount << " students in " << topWord << endl;
+        cout << topCount << "\033[1;32m students in \033[0m" << topWord << endl;
         inst[topIndex] = 0;
     }
 }
@@ -130,7 +130,7 @@ void Ocupation::check_students_by_UCs(string in)
     }
 
     cout << endl;
-    cout << "Number of students registered in " << in << " UCs: " << count << endl;
+    cout << "\033[1;32mNumber of students registered in \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl;
 }
 
 void Ocupation::check_class_occupation(string id) {
@@ -151,7 +151,7 @@ void Ocupation::check_class_occupation(string id) {
     getline(file, line);
 
     cout << endl;
-    cout << "Number of students registered in class " << id <<": ";
+    cout << "\033[1;32mNumber of students registered in class \033[0m" << id <<"\033[1;32m: \033[0m";
 
     while (getline(file, line)) {
 
@@ -180,6 +180,7 @@ void Ocupation::check_class_occupation(string id) {
 
     cout << count << endl;
 }
+
 int Ocupation::check_class_occupation_per_uc(string id,string uc) {
 
     ifstream file("../schedule/students_classes.csv");
@@ -221,8 +222,9 @@ int Ocupation::check_class_occupation_per_uc(string id,string uc) {
             count++;
         }
     }
+    return count;
+}
 
-    return count;}
 void Ocupation::check_UC_occupation(string id) {
     ifstream file("../schedule/students_classes.csv");
 
@@ -239,7 +241,7 @@ void Ocupation::check_UC_occupation(string id) {
     getline(file, line);
 
     cout << endl;
-    cout << "Number of students registered in UC " << id <<": ";
+    cout << "\033[1;32mNumber of students registered in UC \033[0m" << id <<"\033[1;32m: \033[0m";
 
     while (getline(file, line)) {
 
@@ -282,7 +284,7 @@ void Ocupation::check_year_occupation(string id) {
     getline(file, line);
 
     cout << endl;
-    cout << "Number of students registered in year "<< id << ": ";
+    cout << "\033[1;32mNumber of students registered in year \033[0m"<< id << "\033[1;32m: \033[0m";
 
     while (getline(file, line)) {
 
@@ -373,7 +375,7 @@ void Ocupation::greatest_number(string id) {
             }
         }
         topWord=words[topIndex];
-        cout << topCount << " students in " << topWord << endl;
+        cout << topCount << "\033[1;32m students in \033[0m" << topWord << endl;
         inst[topIndex] = 0;
     }
 }
