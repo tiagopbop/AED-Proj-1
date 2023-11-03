@@ -128,14 +128,90 @@ void Changes:: call_joinuc(string id, string uc) {
 
 void Changes::call_leaveuc(string id, string uc) {
 
+    string line;
+    string word;
+    vector<string> row;
+
+    bool in_uc = false;
+
+    struct std {
+        string id;
+        string name;
+        string uc;
+        string cc;
+    };
+    std a = {"StudentCode","StudentName","UcCode","ClassCode"};
+    vector<std> rawr;
+    rawr.push_back(a);
+
+
+    ifstream file("../schedule/students_classes.csv");
+    if (!file.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return;
+    }
+
+    getline(file, line);
+
+    cout << endl;
+
+    while (getline(file, line)) {
+
+        row.clear();
+        stringstream iss(line);
+
+        getline(iss, word, ',');
+        row.push_back(word);
+
+        getline(iss, word, ',');
+        row.push_back(word);
+
+        getline(iss, word, ',');
+        row.push_back(word);
+
+        iss >> word;
+        row.push_back(word);
+
+        if(row[0]==id && row[2]==uc)
+        {
+            in_uc = true;
+            continue;
+        }
+        else
+        {
+            a= {row[0],row[1],row[2],row[3]};
+            rawr.push_back(a);
+        }
+    }
+
+    if(!in_uc) {
+        cout << "You are not in enrolled in that UC";
+        return;
+    }
+
+    file.close();
+
+    ofstream fil("../schedule/students_classes.csv");
+    if (!fil.is_open()) {
+        cerr << "FAILED TO OPEN THE FILE" << endl;
+        return;
+    }
+
+    for (auto l : rawr) {
+        fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
+    }
+
+    cout << "You have successfully removed " << id << " from " << uc << "." << endl;
 }
 
 void Changes::call_swapuc(string id, string ucl, string ucj) {
-
+    Changes::call_leaveuc( id, ucl);
+    Changes::call_joinuc(id, ucj);
 }
 
 void Changes::call_swapclass(string id, string uc) {
-
+    Changes::call_leaveuc(id, uc);
+    Changes::call_joinuc(id, uc);
 }
 
 void Changes::call_multi(string id, string uc, string cass) {
