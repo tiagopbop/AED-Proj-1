@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void Changes:: call_joinuc(string id, string uc) {
+void Changes:: call_joinuc(string id, string uc, int cap) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
@@ -87,13 +87,20 @@ void Changes:: call_joinuc(string id, string uc) {
             if (classes.size() != 1) {
                 cout << "\033[1;34mChoose one from the available classes:\033[0m" << endl;
                 for (auto it: classes) {
-                    cout << "\033[1;36m[ \033[0m" << options << "\033[1;36m ]\033[0m" << " " << it << endl;
-                    options++;
+
+                    if (Ocupation::check_class_occupation_per_uc(it,uc) < cap) {
+                        cout << "\033[1;36m[ \033[0m" << options << "\033[1;36m ]\033[0m" << " " << it << endl;
+                        options++;
+                    }
                 }
+                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Cancel\033[0m" << endl;
                 cout << endl << "\033[1;34mDecision: \033[0m";
                 cin >> decision;
 
-                if (Changes::check_conflicts(classes[decision - 1], uc, id)) {
+                if (decision == 0) {
+                    return;
+                }
+                else if (Changes::check_conflicts(classes[decision - 1], uc, id)) {
 
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
@@ -102,9 +109,11 @@ void Changes:: call_joinuc(string id, string uc) {
                     cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl;
                 }
                 else {
-                    cout << "\033[1;31mWe could not assign you to the chosen class due to schedule conflicts\033[0m" << endl;
+                    cout << endl << "\033[1;31mWe could not assign you to the chosen class due to schedule conflicts\033[0m\n" << endl;
+                    Changes::call_joinuc(id, uc, cap);
                 }
-            } else {
+            }
+            else {
                 if (Changes::check_conflicts(classes[0], uc, id)) {
 
                     ofstream filew;
@@ -126,10 +135,11 @@ void Changes:: call_joinuc(string id, string uc) {
     }
 }
 
-void Changes::call_leaveuc(string id, string uc) {
+void Changes::call_leaveuc(string id, string uc, bool trigger) {
 
     string line;
     string word;
+    string cc;
     vector<string> row;
 
     bool in_uc = false;
@@ -175,6 +185,7 @@ void Changes::call_leaveuc(string id, string uc) {
         if(row[0]==id && row[2]==uc)
         {
             in_uc = true;
+            cc = row[3];
             continue;
         }
         else
@@ -185,7 +196,7 @@ void Changes::call_leaveuc(string id, string uc) {
     }
 
     if(!in_uc) {
-        cout << "You are not in enrolled in that UC";
+        cout << "You are not enrolled in that UC" << endl;
         return;
     }
 
@@ -201,20 +212,26 @@ void Changes::call_leaveuc(string id, string uc) {
         fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
     }
 
-    cout << "You have successfully removed " << id << " from " << uc << "." << endl;
+    if (!trigger) {
+        cout << "You have successfully removed " << id << " from " << uc << endl << endl;
+    }
+    else {
+        cout << "You have successfully removed " << id << " from " << cc << endl << endl;
+    }
 }
 
-void Changes::call_swapuc(string id, string ucl, string ucj) {
-    Changes::call_leaveuc( id, ucl);
-    Changes::call_joinuc(id, ucj);
+void Changes::call_swapuc(string id, string ucl, string ucj, int cap) {
+    Changes::call_leaveuc(id, ucl);
+    Changes::call_joinuc(id, ucj, cap);
 }
 
-void Changes::call_swapclass(string id, string uc) {
-    Changes::call_leaveuc(id, uc);
-    Changes::call_joinuc(id, uc);
+void Changes::call_swapclass(string id, string uc, int cap) {
+    Changes::call_leaveuc(id, uc, true);
+    Changes::call_joinuc(id, uc, cap);
 }
 
-void Changes::call_multi(string id, string uc, string cass) {
+void Changes::call_multi(string id, int cap) {
+
 
 }
 
@@ -398,4 +415,3 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
     }
     return true;
 }
-

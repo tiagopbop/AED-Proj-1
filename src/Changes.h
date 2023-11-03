@@ -12,15 +12,15 @@ private:
     int a;
 
 public:
-    static void call_joinuc(string id, string uc);
+    static void call_joinuc(string id, string uc, int cap);
 
-    static void call_leaveuc(string id, string uc);
+    static void call_leaveuc(string id, string uc, bool trigger = false);
 
-    static void call_swapuc(string id, string ucl, string ucj);
+    static void call_swapuc(string id, string ucl, string ucj, int cap);
 
-    static void call_swapclass(string id, string uc);
+    static void call_swapclass(string id, string uc, int cap);
 
-    static void call_multi(string id, string uc, string cass);
+    static void call_multi(string id, int cap);
 
     static void available_classes(vector<string> &vect,string uc);
 
