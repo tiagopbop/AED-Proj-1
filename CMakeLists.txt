@@ -13,4 +13,5 @@ add_executable(Remake src/main.cpp
         src/Ocupation.h
         src/Ocupation.cpp
         src/Schedules_Checker.cpp
-        src/ListStudents.cpp)
+        src/ListStudents.cpp
+        src/Undo.cpp)
