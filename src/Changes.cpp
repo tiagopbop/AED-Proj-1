@@ -94,15 +94,22 @@ void Changes:: call_joinuc(string id, string uc) {
                 cin >> decision;
 
                 if (Changes::check_conflicts(classes[decision - 1], uc, id)) {
-                    
-                    cout << endl << "You were assigned to this class successfully: " << classes[decision - 1] << endl;
-                }
-                else {
+                    ofstream filew;
+                    filew.open("../schedule/students_classes.csv",ios::out | ios::app);
+                    filew << id << "," << name << "," << uc << "," << classes[decision-1] << endl;
+                          cout << endl << "You were assigned to this class successfully: " << classes[decision - 1]
+                          << endl;
+                } else {
                     cout << "We could not assign you to the chosen class due to schedule conflicts" << endl;
                 }
-            }
-            else {
-                cout << "You were assigned to this class:  " << classes[0] << endl; // Assumindo que n cria conflito
+            } else {
+                if (Changes::check_conflicts(classes[0], uc, id)) {
+
+                    ofstream filew;
+                    filew.open("../schedule/students_classes.csv", ios::out | ios::app);
+                    filew << id << "," << name << "," << uc << "," << classes[0] << endl;
+                    cout << "You were assigned to this class:  " << classes[0] << endl; // Assumindo que n cria conflito
+                }
             }
         }
         else {

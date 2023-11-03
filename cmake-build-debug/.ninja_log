@@ -1,13 +1,14 @@
 # ninja log v5
-1	137	1699027264158610290	CMakeFiles/Remake.dir/src/Course.cpp.o	c4c8f163e63a9c32
-1	207	1699027264226618800	CMakeFiles/Remake.dir/src/Student.cpp.o	f2e9445c65854a4
-1	207	1699027264230619301	CMakeFiles/Remake.dir/src/Class.cpp.o	9dd81ea522e0913b
-0	264	1699027264286626308	CMakeFiles/Remake.dir/src/main.cpp.o	d1cee01e613383ad
-1	708	1699027264730681871	CMakeFiles/Remake.dir/src/Ocupation.cpp.o	99bdf633dbb9f99e
-1	786	1699027264802690882	CMakeFiles/Remake.dir/src/Changes.cpp.o	9e6eee821a567849
-207	913	1699027264934707401	CMakeFiles/Remake.dir/src/ListStudents.cpp.o	aec4186248f3e094
-0	316	1699027309400026750	CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o	e7b06708570e6e1a
-0	197	1699027333694790817	CMakeFiles/Remake.dir/src/main.cpp.o	d1cee01e613383ad
-0	193	1699027366302408639	CMakeFiles/Remake.dir/src/main.cpp.o	d1cee01e613383ad
-1	356	1699027366462426201	CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o	e7b06708570e6e1a
-356	404	1699027366510431469	Remake	438cf110f6da5537
+0	127	1699033236669341883	CMakeFiles/Remake.dir/src/Student.cpp.o	f2e9445c65854a4
+0	128	1699033236669341883	CMakeFiles/Remake.dir/src/Course.cpp.o	c4c8f163e63a9c32
+0	204	1699033236745340051	CMakeFiles/Remake.dir/src/Class.cpp.o	9dd81ea522e0913b
+0	278	1699033236817338316	CMakeFiles/Remake.dir/src/main.cpp.o	d1cee01e613383ad
+128	476	1699033237017333499	CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o	e7b06708570e6e1a
+128	490	1699033237029333213	CMakeFiles/Remake.dir/src/ListStudents.cpp.o	aec4186248f3e094
+1	567	1699033237105331402	CMakeFiles/Remake.dir/src/Ocupation.cpp.o	99bdf633dbb9f99e
+1	624	1699033237165329972	CMakeFiles/Remake.dir/src/Changes.cpp.o	9e6eee821a567849
+624	669	1699033237209328924	Remake	438cf110f6da5537
+0	384	1699034095060320605	CMakeFiles/Remake.dir/src/Changes.cpp.o	9e6eee821a567849
+384	442	1699034095116323114	Remake	438cf110f6da5537
+0	385	1699034434938794784	CMakeFiles/Remake.dir/src/Changes.cpp.o	9e6eee821a567849
+385	434	1699034434986794044	Remake	438cf110f6da5537
