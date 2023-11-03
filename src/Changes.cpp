@@ -6,6 +6,7 @@
 #include <sstream>
 #include <iostream>
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
@@ -196,7 +197,7 @@ void Changes::call_leaveuc(string id, string uc, bool trigger) {
     }
 
     if(!in_uc) {
-        cout << "You are not enrolled in that UC" << endl;
+        cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl;
         return;
     }
 
@@ -213,10 +214,10 @@ void Changes::call_leaveuc(string id, string uc, bool trigger) {
     }
 
     if (!trigger) {
-        cout << "You have successfully removed " << id << " from " << uc << endl << endl;
+        cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << uc << endl << endl;
     }
     else {
-        cout << "You have successfully removed " << id << " from " << cc << endl << endl;
+        cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << cc << endl << endl;
     }
 }
 
@@ -231,6 +232,8 @@ void Changes::call_swapclass(string id, string uc, int cap) {
 }
 
 void Changes::call_multi(string id, int cap) {
+
+    queue <string> operations;
 
 
 }

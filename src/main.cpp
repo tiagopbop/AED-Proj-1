@@ -37,6 +37,7 @@ int main() {
     string cl1;
     string uc2;
     string in;
+    string in2;
 
     while (true) {
 
@@ -68,9 +69,11 @@ int main() {
 
                 if (decision == 1) {
 
-                    cout << "\033[1;34mWhich class: \033[0m";
+                    cout << "\033[1;34mWhich UC: \033[0m";
                     cin >> in;
-                    ListStudents::check_class_students(in);
+                    cout << "\033[1;34mWhich class: \033[0m";
+                    cin >> in2;
+                    ListStudents::check_class_students(in, in2);
 
                 }
                 else if (decision == 2) {
