@@ -35,7 +35,7 @@ void Undo::set_clleft(string cll) {
     cl_left = cll;
 }
 
-void Undo::write_log(string id,string name, string ucj, string cc, string op,int cap, string ucl, string cl_l) {
+void Undo::write_log(string id, string ucj, string cc, string op,int cap, string ucl, string cl_l) {
 
     ofstream logia;
     logia.open("../schedule/log.csv",ios::out | ios::app);
