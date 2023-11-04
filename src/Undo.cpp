@@ -121,12 +121,12 @@ void Undo::go_back()
 
     else if(last_op == "leaveuc")
     {
-        Changes::call_joinuc(last_id,last_uc,cap)
+        Changes::call_joinuc(last_id,last_uc,cap);
     }
 
     else if(last_op == "swapuc")
     {
-        Changes::call_leaveuc(last_id,last_uc)
+        Changes::call_leaveuc(last_id,last_uc);
     }
 
 }
