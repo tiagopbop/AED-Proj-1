@@ -178,7 +178,7 @@ int main() {
                         cin >> id1;
                         cout << endl << "\033[1;34mUC to leave: \033[0m";
                         cin >> uc1;
-                        Changes::call_leaveuc(id1, uc1);
+                        Changes::call_leaveuc(id1, uc1, cap);
                         break;
                     case 3:
                         cout << "\033[1;34mStudent ID: \033[0m";
