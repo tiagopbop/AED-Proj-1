@@ -297,6 +297,30 @@ src/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Student.cpp.s
 .PHONY : src/Student.cpp.s
 
+src/Undo.o: src/Undo.cpp.o
+.PHONY : src/Undo.o
+
+# target to build an object file
+src/Undo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Undo.cpp.o
+.PHONY : src/Undo.cpp.o
+
+src/Undo.i: src/Undo.cpp.i
+.PHONY : src/Undo.i
+
+# target to preprocess a source file
+src/Undo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Undo.cpp.i
+.PHONY : src/Undo.cpp.i
+
+src/Undo.s: src/Undo.cpp.s
+.PHONY : src/Undo.s
+
+# target to generate assembly for a file
+src/Undo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Undo.cpp.s
+.PHONY : src/Undo.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -351,6 +375,9 @@ help:
 	@echo "... src/Student.o"
 	@echo "... src/Student.i"
 	@echo "... src/Student.s"
+	@echo "... src/Undo.o"
+	@echo "... src/Undo.i"
+	@echo "... src/Undo.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

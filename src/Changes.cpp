@@ -86,7 +86,7 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
 
         if (!classes.empty()) {
             if (classes.size() != 1) {
-                cout << "\033[1;34mChoose one from the available classes:\033[0m" << endl;
+                cout << "\033[1;34mChoose one from the available classes of UC \033[0m" << uc << "\033[1;34m :\033[0m" << endl;
                 for (auto it: classes) {
 
                     if (Ocupation::check_class_occupation_per_uc(it,uc) < cap) {
@@ -231,11 +231,137 @@ void Changes::call_swapclass(string id, string uc, int cap) {
     Changes::call_joinuc(id, uc, cap);
 }
 
-void Changes::call_multi(string id, int cap) {
+void Changes::call_multi(string id, int cap, queue<string> operations) {
 
-    queue <string> operations;
+    string in;
 
+    cout << "\033[1;34mWhich operation would you like to execute first?\033[0m\n";
+    cout << "\033[1;36m[ 1 ]\033[0m" << " Join UC" <<endl;
+    cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
+    cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
+    cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
+    cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Cancel queued operations\033[0m" << endl;
 
+    int decision;
+    cout << endl << "\033[1;34mDecision: \033[0m";
+    cin >> decision;
+    cout << endl;
+
+    while (true) {
+        switch (decision) {
+            case 1:
+
+                operations.push("joinuc");
+                cout << "\033[1;34mUC to join: \033[0m";
+                cin >> in;
+                cout << endl;
+                operations.push(in);
+                break;
+
+            case 2:
+
+                operations.push("leaveuc");
+                cout << "\033[1;34mUC to leave: \033[0m";
+                cin >> in;
+                cout << endl;
+                operations.push(in);
+                break;
+
+            case 3:
+
+                operations.push("swapuc");
+                cout << "\033[1;34mUC to leave: \033[0m";
+                cin >> in;
+                operations.push(in);
+                cout << "\033[1;34mUC to join: \033[0m";
+                cin >> in;
+                cout << endl;
+                operations.push(in);
+                break;
+
+            case 4:
+
+                operations.push("swapclass");
+                cout << "\033[1;34mUC in question: \033[0m";
+                cin >> in;
+                cout << endl;
+                operations.push(in);
+                break;
+
+            case 9:
+
+                Changes::execute_requests(operations, id, cap);
+                return;
+
+            case 0:
+
+                return;
+
+            default:
+
+                cout << "\033[0;31mUnrecognized option\033[0m" << endl;
+                break;
+        }
+
+        cout << "\033[1;34mWish to request any other operation or execute all requests previously made?\033[0m\n";
+        cout << "\033[1;36m[ 1 ]\033[0m" << " Join UC" <<endl;
+        cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
+        cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
+        cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
+        cout << "\033[1;33m[ 9 ]\033[0m" << " Execute requests" << endl;
+        cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Cancel queued operations\033[0m" << endl;
+
+        cout << endl << "\033[1;34mDecision: \033[0m";
+        cin >> decision;
+        cout << endl;
+    }
+}
+
+void Changes::execute_requests(queue<string> operations, string id, int cap) {
+
+    string operation;
+    string uc1;
+    string uc2;
+
+    while (!operations.empty()) {
+
+        operation = operations.front();
+        operations.pop();
+
+        if (operation == "joinuc") {
+
+            uc1 = operations.front();
+            operations.pop();
+            Changes::call_joinuc(id, uc1, cap);
+
+        }
+        else if (operation == "leaveuc") {
+
+            uc1 = operations.front();
+            operations.pop();
+            Changes::call_leaveuc(id, uc1);
+
+        }
+        else if (operation == "swapuc") {
+
+            uc1 = operations.front();
+            operations.pop();
+            uc2 = operations.front();
+            operations.pop();
+            Changes::call_swapuc(id, uc1, uc2, cap);
+
+        }
+        else {
+
+            uc1 = operations.front();
+            operations.pop();
+            Changes::call_swapclass(id, uc1, cap);
+
+        }
+    }
+
+    cout << endl;
+    cout << "\033[1;32mAll queued operations executed\033[0m" << endl;
 }
 
 void Changes::available_classes(vector<string>& vect,string uc) {

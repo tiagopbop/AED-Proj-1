@@ -124,6 +124,12 @@
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h">
 			<Option target="Remake"/>
 		</Unit>
+		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp">
+			<Option target="Remake"/>
+		</Unit>
+		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h">
+			<Option target="Remake"/>
+		</Unit>
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/main.cpp">
 			<Option target="Remake"/>
 		</Unit>

@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -20,7 +21,9 @@ public:
 
     static void call_swapclass(string id, string uc, int cap);
 
-    static void call_multi(string id, int cap);
+    static void call_multi(string id, int cap, queue<string> operations);
+
+    static void execute_requests(queue<string> operations, string id, int cap);
 
     static void available_classes(vector<string> &vect,string uc);
 

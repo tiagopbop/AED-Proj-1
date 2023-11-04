@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Student.h"
 #include "Changes.h"
 #include "Schedules_Checker.h"
 #include "Ocupation.h"
 #include "ListStudents.h"
+#include <queue>
 
 using namespace std;
 
@@ -32,6 +32,7 @@ int main() {
     cin >> decision;
     cout << endl;
 
+    queue<string> operations;
     string id1;
     string uc1;
     string cl1;
@@ -196,15 +197,18 @@ int main() {
                         cin >> uc1;
                         Changes::call_swapclass(id1, uc1, cap);
                         break;
-/*
+
                     case 5:
 
                         cout << "\033[1;34mStudent ID: \033[0m";
                         cin >> id1;
                         cout << endl;
-                        Changes::call_multi(id1, cap);
+                        while (!operations.empty()) {
+                            operations.pop();
+                        }
+                        Changes::call_multi(id1, cap, operations);
                         break;
-*/
+
                     case 0:
 
                         break;
