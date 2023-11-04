@@ -51,6 +51,7 @@ void ListStudents::check_class_students(string uc, string cc) {
             cout << row[1] << "\033[1;32m - \033[0m" << row[0] << endl;
         }
     }
+    cout << endl;
 }
 
 void ListStudents::check_UC_students(string id) {
@@ -92,6 +93,7 @@ void ListStudents::check_UC_students(string id) {
             cout << row[1] << "\033[1;32m - \033[0m" << row[0] << endl;
         }
     }
+    cout << endl;
 }
 
 void ListStudents::check_year_students(string id) {
@@ -137,4 +139,5 @@ void ListStudents::check_year_students(string id) {
             cout << row[1] << "\033[1;32m - \033[0m" << row[0] << endl;
         }
     }
+    cout << endl;
 }

@@ -89,6 +89,7 @@ void Schedules_Checker::print_schedule_student(string uc, string cc) {
             cout << "\033[1;32m| \033[0m" << row[2] << "\033[1;32m - At \033[0m" << row[3] << "\033[1;32m - \033[0m" << row[4] << "\033[1;32m hour(s) - \033[0m" << row[5] << " " << row[1] << "\033[1;32m lesson |\033[0m" << endl;
         }
     }
+    cout << endl;
 }
 
 void Schedules_Checker::check_schedule_class(string in) {
@@ -134,4 +135,5 @@ void Schedules_Checker::check_schedule_class(string in) {
             cout << "\033[1;32m| \033[0m" << row[2] << "\033[1;32m - At \033[0m" << row[3] << "\033[1;32m - \033[0m" << row[4] << "\033[1;32m hour(s) - \033[0m" << row[5] << " " << row[1] << "\033[1;32m lesson |\033[0m" << endl;
         }
     }
+    cout << endl;
 }
