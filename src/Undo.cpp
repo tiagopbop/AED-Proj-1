@@ -122,7 +122,8 @@ void Undo::go_back()
     else if(last_op == "leaveuc")
     {
         Changes::call_joinuc(last_id,last_uc,cap);
-    }
+
+
 
     else if(last_op == "swapuc")
     {

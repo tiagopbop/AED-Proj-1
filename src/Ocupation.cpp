@@ -77,6 +77,7 @@ void Ocupation::most_students(string in) {
         cout << topCount << "\033[1;32m students in \033[0m" << topWord << endl;
         inst[topIndex] = 0;
     }
+    cout << endl;
 }
 
 void Ocupation::check_students_by_UCs(string in)
@@ -130,7 +131,7 @@ void Ocupation::check_students_by_UCs(string in)
     }
 
     cout << endl;
-    cout << "\033[1;32mNumber of students registered in \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl;
+    cout << "\033[1;32mNumber of students registered in \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl << endl;
 }
 
 void Ocupation::check_class_occupation(string id) {
@@ -178,7 +179,7 @@ void Ocupation::check_class_occupation(string id) {
         }
     }
 
-    cout << count << endl;
+    cout << count << endl << endl;
 }
 
 int Ocupation::check_class_occupation_per_uc(string id,string uc) {
@@ -264,7 +265,7 @@ void Ocupation::check_UC_occupation(string id) {
             count++;
         }
     }
-    cout << count << endl;
+    cout << count << endl << endl;
 }
 
 void Ocupation::check_year_occupation(string id) {
@@ -310,7 +311,7 @@ void Ocupation::check_year_occupation(string id) {
             count++;
         }
     }
-    cout << count << endl;
+    cout << count << endl << endl;
 }
 
 void Ocupation::greatest_number(string id) {
@@ -378,4 +379,5 @@ void Ocupation::greatest_number(string id) {
         cout << topCount << "\033[1;32m students in \033[0m" << topWord << endl;
         inst[topIndex] = 0;
     }
+    cout << endl;
 }

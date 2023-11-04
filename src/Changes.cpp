@@ -71,7 +71,7 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
 
         if (row[0] == id) {
             if (row[2] == uc) {
-                cout << "\033[1;33mYou are already in that UC\033[0m" << endl;
+                cout << "\033[1;33mYou are already in that UC\033[0m" << endl << endl;
                 return;
             }
             ucs.push_back(row[2]);
@@ -108,7 +108,7 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
 
                     filew << id << "," << name << "," << uc << "," << classes[decision-1] << endl;
-                    cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl;
+                    cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl << endl;
                 }
                 else {
                     cout << endl << "\033[1;31mWe could not assign you to the chosen class due to schedule conflicts\033[0m\n" << endl;
@@ -121,19 +121,19 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv", ios::out | ios::app);
                     filew << id << "," << name << "," << uc << "," << classes[0] << endl;
-                    cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl;
+                    cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
                 }
                 else {
-                    cout << "\033[1;31mWe could not assign you to any class from the given UC due to schedule conflicts\033[0m" << endl;
+                    cout << "\033[1;31mWe could not assign you to any class from the given UC due to schedule conflicts\033[0m" << endl << endl;
                 }
             }
         }
         else {
-            cout << "\033[1;31mThere are no available classes for you to join\033[0m" << endl;
+            cout << "\033[1;31mThere are no available classes for you to join\033[0m" << endl << endl;
         }
     }
     else {
-        cout << "\033[1;31mYou cannot join any more UCs (Max. 7)\033[0m" << endl;
+        cout << "\033[1;31mYou cannot join any more UCs (Max. 7)\033[0m" << endl << endl;
     }
 }
 
@@ -198,7 +198,7 @@ void Changes::call_leaveuc(string id, string uc, bool trigger) {
     }
 
     if(!in_uc) {
-        cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl;
+        cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
         return;
     }
 
@@ -296,11 +296,12 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
 
             case 0:
 
+                cout << endl;
                 return;
 
             default:
 
-                cout << "\033[0;31mUnrecognized option\033[0m" << endl;
+                cout << "\033[0;31mUnrecognized option\033[0m" << endl << endl;
                 break;
         }
 
@@ -362,7 +363,7 @@ void Changes::execute_requests(queue<string> operations, string id, int cap) {
     }
 
     cout << endl;
-    cout << "\033[1;32mAll queued operations executed\033[0m" << endl;
+    cout << "\033[1;32mAll queued operations executed\033[0m" << endl << endl;
 }
 
 void Changes::available_classes(vector<string>& vect,string uc) {
