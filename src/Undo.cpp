@@ -27,7 +27,15 @@ void Undo::set_ucl(string uc) {
     ucl = uc;
 }
 
-void Undo::write_log(string id, string ucj, string cc, string op,int cap, string ucl) {
+void Undo::set_name(string name) {
+    last_name = name;
+}
+
+void Undo::set_clleft(string cll) {
+    cl_left = cll;
+}
+
+void Undo::write_log(string id,string name, string ucj, string cc, string op,int cap, string ucl, string cl_l) {
 
     ofstream logia;
     logia.open("../schedule/log.csv",ios::out | ios::app);
@@ -42,13 +50,13 @@ void Undo::write_log(string id, string ucj, string cc, string op,int cap, string
     set_lastclass(cc);
     set_lastop(op);
     set_ucl(ucl);
-
+    set_clleft(cl_l);
     logia << id << "," << ucj << "," << cc << "," << op << endl;
     logia.close();
 }
 
 
-void Undo::go_back() {
+void Undo::go_back(int cap) {
     string line;
     string word;
     string cc;
@@ -121,12 +129,14 @@ void Undo::go_back() {
     }
     else if (last_op == "swapuc") {
             Changes::call_leaveuc(last_id, last_uc,false,true);
-            Changes::call_joinuc(last_id,ucl,cap, true);
+            Changes::call_joinuc(last_id,ucl,cap);
 
     }
     else if( last_op == "swapclass")
     {
         Changes::call_leaveuc(last_id, last_uc, true,true);
-        Changes::call_joinuc(last_id, last_uc, cap,true);    }
+        Changes::call_joinuc(last_id,last_uc,cap);    }
 }
+
+
 

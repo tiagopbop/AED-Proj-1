@@ -28,6 +28,8 @@ public:
     static void available_classes(vector<string> &vect,string uc);
 
     static bool check_conflicts(string cc, string uc, string id);
+
+    void call_joinuc_force(string id, string name, string uc, string cl);
 };
 
 

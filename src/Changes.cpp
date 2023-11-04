@@ -555,3 +555,10 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
     }
     return true;
 }
+
+void Changes::call_joinuc_force(string id, string name, string uc, string cl)
+{
+    ofstream filew;
+    filew.open("../schedule/students_classes.csv", ios::out | ios::app);
+    filew << id << "," << name << "," << uc << "," << cl << endl;
+}
