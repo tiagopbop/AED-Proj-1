@@ -178,7 +178,7 @@ int main() {
                         cin >> id1;
                         cout << endl << "\033[1;34mUC to leave: \033[0m";
                         cin >> uc1;
-                        Changes::call_leaveuc(id1, uc1, cap);
+                        Changes::call_leaveuc(id1, uc1, "", "", cap);
                         break;
                     case 3:
                         cout << "\033[1;34mStudent ID: \033[0m";
@@ -223,7 +223,33 @@ int main() {
 
             case 9:
 
+                cout << "\033[1;36m[ 1 ]\033[0m" << " Undo last operation" <<endl;
+                cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
+                cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
+                cout << "\033[1;36m[ 5 ]\033[0m" << " Queued operations" << endl;
+                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Go back\033[0m" << endl;
 
+                cout << endl << "\033[1;34mDecision: \033[0m";
+                cin >> decision;
+                cout << endl;
+
+                switch (decision) {
+                    case 1:
+
+                        Undo::go_back(cap);
+                        break;
+
+                    case 0:
+
+                        break;
+
+                    default:
+
+                        cout << "\033[0;31mUnrecognized option\033[0m" << endl;
+                        break;
+                }
+                break;
 
             case 0:
 

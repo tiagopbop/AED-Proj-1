@@ -122,20 +122,20 @@ void Undo::go_back(int cap) {
 
 
     if (last_op == "joinuc") {
-        Changes::call_leaveuc(last_id, last_uc);
+        Changes::call_leaveuc(last_id, last_uc, "", "", cap);
     }
     else if (last_op == "leaveuc") {
-        Changes::call_joinuc(last_id, last_uc, cap);
+        Changes::call_joinuc(last_id, last_uc, cap, last_class,false, true);
     }
     else if (last_op == "swapuc") {
-            Changes::call_leaveuc(last_id, last_uc,false,true);
-            Changes::call_joinuc(last_id,ucl,cap);
-
+            Changes::call_leaveuc(last_id, last_uc, "", "", cap, false, false);
+            Changes::call_joinuc(last_id,ucl,cap, last_class, false, true);
     }
     else if( last_op == "swapclass")
     {
-        Changes::call_leaveuc(last_id, last_uc, true,true);
-        Changes::call_joinuc(last_id,last_uc,cap);    }
+        Changes::call_leaveuc(last_id, last_uc, "", "", cap, false, false);
+        Changes::call_joinuc(last_id,last_uc, cap, last_class, false, true);
+    }
 }
 
 
