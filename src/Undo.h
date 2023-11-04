@@ -6,17 +6,19 @@ using namespace std;
 
 class Undo {
 private:
-    string last_id;
-    string last_uc;
-    string last_class;
-    string last_op;
+    static string last_id;
+    static string last_uc;
+    static string last_class;
+    static string last_op;
+    static string ucl;
 
 public:
-    void set_lastid(string id);
-    void set_lastuc(string uc);
-    void set_lastclass(string cc);
-    void set_lastop(string op);
-    void write_log(string id, string uc, string cc, string op,string cap);
+    static void set_lastid(string id);
+    static void set_lastuc(string uc);
+    static void set_lastclass(string cc);
+    static void set_lastop(string op);
+    static void set_ucl(string ucl);
+    static void write_log(string id, string uc, string cc, string op, int cap, string ucl ="");
     void go_back();
 };
 

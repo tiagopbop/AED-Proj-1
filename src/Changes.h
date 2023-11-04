@@ -13,9 +13,9 @@ private:
     int a;
 
 public:
-    static void call_joinuc(string id, string uc, int cap);
+    static void call_joinuc(string id, string uc, int cap, bool sw = false);
 
-    static void call_leaveuc(string id, string uc, bool trigger = false);
+    static void call_leaveuc(string id, string uc, bool trigger = false, bool sw = false);
 
     static void call_swapuc(string id, string ucl, string ucj, int cap);
 

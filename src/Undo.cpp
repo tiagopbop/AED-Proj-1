@@ -23,8 +23,11 @@ void Undo::set_lastclass(string cc) {
 void Undo::set_lastop(string op) {
     last_op = op;
 }
+void Undo::set_ucl(string uc) {
+    ucl = uc;
+}
 
-void Undo::write_log(string id, string ucj, string cc, string op,string cap) {
+void Undo::write_log(string id, string ucj, string cc, string op,int cap, string ucl) {
 
     ofstream logia;
     logia.open("../schedule/log.csv",ios::out | ios::app);
@@ -38,14 +41,14 @@ void Undo::write_log(string id, string ucj, string cc, string op,string cap) {
     set_lastuc(ucj);
     set_lastclass(cc);
     set_lastop(op);
+    set_ucl(ucl);
 
     logia << id << "," << ucj << "," << cc << "," << op << endl;
     logia.close();
 }
 
 
-void Undo::go_back()
-{
+void Undo::go_back() {
     string line;
     string word;
     string cc;
@@ -59,7 +62,7 @@ void Undo::go_back()
         string uc;
         string cc;
     };
-    std a = {"StudentCode","UcCode","ClassCode","Operation"};
+    std a = {"StudentCode", "UcCode", "ClassCode", "Operation"};
     vector<std> rawr;
     rawr.push_back(a);
 
@@ -91,13 +94,10 @@ void Undo::go_back()
         iss >> word;
         row.push_back(word);
 
-        if(row[0]==last_id && row[1]==last_uc && row[2]==last_class && row[3]==last_op)
-        {
+        if (row[0] == last_id && row[1] == last_uc && row[2] == last_class && row[3] == last_op) {
             continue;
-        }
-        else
-        {
-            a= {row[0],row[1],row[2],row[3]};
+        } else {
+            a = {row[0], row[1], row[2], row[3]};
             rawr.push_back(a);
         }
     }
@@ -108,30 +108,25 @@ void Undo::go_back()
         return;
     }
 
-    for (auto l : rawr) {
+    for (auto l: rawr) {
         fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
     }
 
 
-
-    if(last_op=="joinuc")
-    {
+    if (last_op == "joinuc") {
         Changes::call_leaveuc(last_id, last_uc);
     }
-
-    else if(last_op == "leaveuc")
-    {
-        Changes::call_joinuc(last_id,last_uc,cap);
-
-
-
-    else if(last_op == "swapuc")
-    {
-        Changes::call_leaveuc(last_id,last_uc);
+    else if (last_op == "leaveuc") {
+        Changes::call_joinuc(last_id, last_uc, cap);
     }
+    else if (last_op == "swapuc") {
+            Changes::call_leaveuc(last_id, last_uc,false,true);
+            Changes::call_joinuc(last_id,ucl,cap, true);
 
+    }
+    else if( last_op == "swapclass")
+    {
+        Changes::call_leaveuc(last_id, last_uc, true,true);
+        Changes::call_joinuc(last_id, last_uc, cap,true);    }
 }
-
-
-
 

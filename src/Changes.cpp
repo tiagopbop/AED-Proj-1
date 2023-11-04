@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void Changes:: call_joinuc(string id, string uc, int cap) {
+void Changes:: call_joinuc(string id, string uc, int cap, bool sw) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
@@ -106,9 +106,10 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
 
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-
+                    if(!sw){Undo::write_log(id,uc,classes[decision-1],"joinuc",cap);}
                     filew << id << "," << name << "," << uc << "," << classes[decision-1] << endl;
                     cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl << endl;
+
                 }
                 else {
                     cout << endl << "\033[1;31mWe could not assign you to the chosen class due to schedule conflicts\033[0m\n" << endl;
@@ -117,11 +118,12 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
             }
             else {
                 if (Changes::check_conflicts(classes[0], uc, id)) {
-
+                    if(!sw){Undo::write_log(id,uc,classes[0],"joinuc",cap);}
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv", ios::out | ios::app);
                     filew << id << "," << name << "," << uc << "," << classes[0] << endl;
                     cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
+
                 }
                 else {
                     cout << "\033[1;31mWe could not assign you to any class from the given UC due to schedule conflicts\033[0m" << endl << endl;
@@ -135,9 +137,11 @@ void Changes:: call_joinuc(string id, string uc, int cap) {
     else {
         cout << "\033[1;31mYou cannot join any more UCs (Max. 7)\033[0m" << endl << endl;
     }
+
 }
 
-void Changes::call_leaveuc(string id, string uc, bool trigger) {
+
+void Changes::call_leaveuc(string id, string uc, bool trigger, bool sw) {
 
     string line;
     string word;
@@ -216,20 +220,25 @@ void Changes::call_leaveuc(string id, string uc, bool trigger) {
 
     if (!trigger) {
         cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << uc << endl << endl;
+        if(!sw){Undo::write_log(id,uc,cc,"leaveuc",cap);}
     }
     else {
         cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << cc << endl << endl;
+        if(!sw){Undo::write_log(id,uc,cc,"leaveuc",cap);}
     }
 }
 
 void Changes::call_swapuc(string id, string ucl, string ucj, int cap) {
-    Changes::call_leaveuc(id, ucl);
-    Changes::call_joinuc(id, ucj, cap);
+    Changes::call_leaveuc(id, ucl,false, true);
+    Changes::call_joinuc(id, ucj, cap,true);
+    Undo::write_log(id,ucj,cc,"swapuc",cap,ucl);
+
 }
 
 void Changes::call_swapclass(string id, string uc, int cap) {
-    Changes::call_leaveuc(id, uc, true);
-    Changes::call_joinuc(id, uc, cap);
+    Changes::call_leaveuc(id, uc, true,true);
+    Changes::call_joinuc(id, uc, cap,true);
+    Undo::write_log(id,uc,clas_joined,"swapclass",cap,clas_left);
 }
 
 void Changes::call_multi(string id, int cap, queue<string> operations) {
