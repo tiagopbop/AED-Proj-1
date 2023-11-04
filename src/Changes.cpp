@@ -9,7 +9,10 @@
 #include <queue>
 #include "Undo.h"
 
+
 using namespace std;
+
+
 
 void Changes::call_joinuc(string id, string uc, int cap, bool sw) {
 
@@ -109,8 +112,10 @@ void Changes::call_joinuc(string id, string uc, int cap, bool sw) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
                     if (!sw) {
-                        Undo::write_log(id, uc, classes[decision - 1], "joinuc", cap);
+                        Undo::write_log(id,name, uc, classes[decision - 1], "joinuc", cap);
                         cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl << endl;
+                        Changes::set_cjoined(classes[decision-1]);
+
                     }
                     filew << id << "," << name << "," << uc << "," << classes[decision-1] << endl;
 
@@ -125,6 +130,7 @@ void Changes::call_joinuc(string id, string uc, int cap, bool sw) {
                     if (!sw) {
                         Undo::write_log(id,uc,classes[0],"joinuc",cap);
                         cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
+                        Changes::set_cjoined(classes[0]);
                     }
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv", ios::out | ios::app);

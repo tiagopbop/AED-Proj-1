@@ -10,9 +10,15 @@ using namespace std;
 
 class Changes {
 private:
-    int a;
+    static string c_joined;
 
 public:
+
+    static void set_cjoined(string c)
+    {
+        c_joined = c;
+    }
+
     static void call_joinuc(string id, string uc, int cap, bool sw = false);
 
     static void call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger = false, bool sw = false);
