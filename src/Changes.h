@@ -14,10 +14,7 @@ private:
 
 public:
 
-    static void set_cjoined(string c)
-    {
-        c_joined = c;
-    }
+    static void set_cjoined(string c);
 
     static void call_joinuc(string id, string uc, int cap, bool sw = false);
 

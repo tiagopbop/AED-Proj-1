@@ -12,7 +12,10 @@
 
 using namespace std;
 
-
+void Changes:: set_cjoined(string c)
+{
+    c_joined = c;
+}
 
 void Changes::call_joinuc(string id, string uc, int cap, bool sw) {
 
@@ -260,8 +263,8 @@ void Changes::call_swapuc(string id, string ucl, string ucj, int cap) {
 
 void Changes::call_swapclass(string id, string uc, int cap) {
     Changes::call_joinuc(id, uc, cap,true);
-    Changes::call_leaveuc(id, uc, "", clas_joined, cap, true,true);
-    Undo::write_log(id,uc,clas_joined,"swapclass",cap,clas_left);
+    Changes::call_leaveuc(id, uc, "", c_joined, cap, true,true);
+    Undo::write_log(id,uc,c_joined,"swapclass",cap,clas_left);
 }
 
 void Changes::call_multi(string id, int cap, queue<string> operations) {
