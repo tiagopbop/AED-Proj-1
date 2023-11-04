@@ -22,7 +22,7 @@ public:
     static void set_ucl(string ucl);
     static void set_name(string name);
     static void set_clleft(string cll);
-    static void write_log(string id, string name, string uc, string cc, string op, int cap, string ucl ="",string cl_left = "");
+    static void write_log(string id,  string uc, string cc, string op, int cap, string ucl ="",string cl_left = "");
     void go_back(int cap);
 
 };

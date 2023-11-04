@@ -11,10 +11,13 @@ using namespace std;
 class Changes {
 private:
     static string c_joined;
+    static string c_left;
 
 public:
 
     static void set_cjoined(string c);
+
+    static void set_cleft(string c);
 
     static void call_joinuc(string id, string uc, int cap, bool sw = false);
 
