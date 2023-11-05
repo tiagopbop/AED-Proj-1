@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void ListStudents::check_class_students(string uc, string cc) {
+void ListStudents::check_class_students(const string& uc, const string& cc) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -54,7 +54,7 @@ void ListStudents::check_class_students(string uc, string cc) {
     cout << endl;
 }
 
-void ListStudents::check_UC_students(string id) {
+void ListStudents::check_UC_students(const string& id) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -96,7 +96,7 @@ void ListStudents::check_UC_students(string id) {
     cout << endl;
 }
 
-void ListStudents::check_year_students(string id) {
+void ListStudents::check_year_students(const string& id) {
 
     ifstream file("../schedule/students_classes.csv");
 

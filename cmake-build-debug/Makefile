@@ -153,54 +153,6 @@ src/Changes.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Changes.cpp.s
 .PHONY : src/Changes.cpp.s
 
-src/Class.o: src/Class.cpp.o
-.PHONY : src/Class.o
-
-# target to build an object file
-src/Class.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Class.cpp.o
-.PHONY : src/Class.cpp.o
-
-src/Class.i: src/Class.cpp.i
-.PHONY : src/Class.i
-
-# target to preprocess a source file
-src/Class.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Class.cpp.i
-.PHONY : src/Class.cpp.i
-
-src/Class.s: src/Class.cpp.s
-.PHONY : src/Class.s
-
-# target to generate assembly for a file
-src/Class.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Class.cpp.s
-.PHONY : src/Class.cpp.s
-
-src/Course.o: src/Course.cpp.o
-.PHONY : src/Course.o
-
-# target to build an object file
-src/Course.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Course.cpp.o
-.PHONY : src/Course.cpp.o
-
-src/Course.i: src/Course.cpp.i
-.PHONY : src/Course.i
-
-# target to preprocess a source file
-src/Course.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Course.cpp.i
-.PHONY : src/Course.cpp.i
-
-src/Course.s: src/Course.cpp.s
-.PHONY : src/Course.s
-
-# target to generate assembly for a file
-src/Course.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Course.cpp.s
-.PHONY : src/Course.cpp.s
-
 src/ListStudents.o: src/ListStudents.cpp.o
 .PHONY : src/ListStudents.o
 
@@ -273,30 +225,6 @@ src/Schedules_Checker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.s
 .PHONY : src/Schedules_Checker.cpp.s
 
-src/Student.o: src/Student.cpp.o
-.PHONY : src/Student.o
-
-# target to build an object file
-src/Student.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Student.cpp.o
-.PHONY : src/Student.cpp.o
-
-src/Student.i: src/Student.cpp.i
-.PHONY : src/Student.i
-
-# target to preprocess a source file
-src/Student.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Student.cpp.i
-.PHONY : src/Student.cpp.i
-
-src/Student.s: src/Student.cpp.s
-.PHONY : src/Student.s
-
-# target to generate assembly for a file
-src/Student.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/src/Student.cpp.s
-.PHONY : src/Student.cpp.s
-
 src/Undo.o: src/Undo.cpp.o
 .PHONY : src/Undo.o
 
@@ -357,12 +285,6 @@ help:
 	@echo "... src/Changes.o"
 	@echo "... src/Changes.i"
 	@echo "... src/Changes.s"
-	@echo "... src/Class.o"
-	@echo "... src/Class.i"
-	@echo "... src/Class.s"
-	@echo "... src/Course.o"
-	@echo "... src/Course.i"
-	@echo "... src/Course.s"
 	@echo "... src/ListStudents.o"
 	@echo "... src/ListStudents.i"
 	@echo "... src/ListStudents.s"
@@ -372,9 +294,6 @@ help:
 	@echo "... src/Schedules_Checker.o"
 	@echo "... src/Schedules_Checker.i"
 	@echo "... src/Schedules_Checker.s"
-	@echo "... src/Student.o"
-	@echo "... src/Student.i"
-	@echo "... src/Student.s"
 	@echo "... src/Undo.o"
 	@echo "... src/Undo.i"
 	@echo "... src/Undo.s"

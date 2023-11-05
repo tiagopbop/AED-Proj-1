@@ -81,12 +81,12 @@ clean: CMakeFiles/Remake.dir/clean
 CMakeFiles/Remake.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Remake.dir/build.make CMakeFiles/Remake.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target Remake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Remake"
 .PHONY : CMakeFiles/Remake.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Remake.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Remake.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Remake.dir/rule

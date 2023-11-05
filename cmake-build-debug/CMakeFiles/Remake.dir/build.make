@@ -83,52 +83,10 @@ CMakeFiles/Remake.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Remake.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/main.cpp -o CMakeFiles/Remake.dir/src/main.cpp.s
 
-CMakeFiles/Remake.dir/src/Student.cpp.o: CMakeFiles/Remake.dir/flags.make
-CMakeFiles/Remake.dir/src/Student.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp
-CMakeFiles/Remake.dir/src/Student.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Remake.dir/src/Student.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Student.cpp.o -MF CMakeFiles/Remake.dir/src/Student.cpp.o.d -o CMakeFiles/Remake.dir/src/Student.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp
-
-CMakeFiles/Remake.dir/src/Student.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Remake.dir/src/Student.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp > CMakeFiles/Remake.dir/src/Student.cpp.i
-
-CMakeFiles/Remake.dir/src/Student.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Remake.dir/src/Student.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp -o CMakeFiles/Remake.dir/src/Student.cpp.s
-
-CMakeFiles/Remake.dir/src/Course.cpp.o: CMakeFiles/Remake.dir/flags.make
-CMakeFiles/Remake.dir/src/Course.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.cpp
-CMakeFiles/Remake.dir/src/Course.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Remake.dir/src/Course.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Course.cpp.o -MF CMakeFiles/Remake.dir/src/Course.cpp.o.d -o CMakeFiles/Remake.dir/src/Course.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.cpp
-
-CMakeFiles/Remake.dir/src/Course.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Remake.dir/src/Course.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.cpp > CMakeFiles/Remake.dir/src/Course.cpp.i
-
-CMakeFiles/Remake.dir/src/Course.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Remake.dir/src/Course.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.cpp -o CMakeFiles/Remake.dir/src/Course.cpp.s
-
-CMakeFiles/Remake.dir/src/Class.cpp.o: CMakeFiles/Remake.dir/flags.make
-CMakeFiles/Remake.dir/src/Class.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.cpp
-CMakeFiles/Remake.dir/src/Class.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Remake.dir/src/Class.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Class.cpp.o -MF CMakeFiles/Remake.dir/src/Class.cpp.o.d -o CMakeFiles/Remake.dir/src/Class.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.cpp
-
-CMakeFiles/Remake.dir/src/Class.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Remake.dir/src/Class.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.cpp > CMakeFiles/Remake.dir/src/Class.cpp.i
-
-CMakeFiles/Remake.dir/src/Class.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Remake.dir/src/Class.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.cpp -o CMakeFiles/Remake.dir/src/Class.cpp.s
-
 CMakeFiles/Remake.dir/src/Changes.cpp.o: CMakeFiles/Remake.dir/flags.make
 CMakeFiles/Remake.dir/src/Changes.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Changes.cpp
 CMakeFiles/Remake.dir/src/Changes.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Remake.dir/src/Changes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Remake.dir/src/Changes.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Changes.cpp.o -MF CMakeFiles/Remake.dir/src/Changes.cpp.o.d -o CMakeFiles/Remake.dir/src/Changes.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Changes.cpp
 
 CMakeFiles/Remake.dir/src/Changes.cpp.i: cmake_force
@@ -142,7 +100,7 @@ CMakeFiles/Remake.dir/src/Changes.cpp.s: cmake_force
 CMakeFiles/Remake.dir/src/Ocupation.cpp.o: CMakeFiles/Remake.dir/flags.make
 CMakeFiles/Remake.dir/src/Ocupation.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.cpp
 CMakeFiles/Remake.dir/src/Ocupation.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Remake.dir/src/Ocupation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Remake.dir/src/Ocupation.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Ocupation.cpp.o -MF CMakeFiles/Remake.dir/src/Ocupation.cpp.o.d -o CMakeFiles/Remake.dir/src/Ocupation.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.cpp
 
 CMakeFiles/Remake.dir/src/Ocupation.cpp.i: cmake_force
@@ -156,7 +114,7 @@ CMakeFiles/Remake.dir/src/Ocupation.cpp.s: cmake_force
 CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o: CMakeFiles/Remake.dir/flags.make
 CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.cpp
 CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o -MF CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o.d -o CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.cpp
 
 CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.i: cmake_force
@@ -170,7 +128,7 @@ CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.s: cmake_force
 CMakeFiles/Remake.dir/src/ListStudents.cpp.o: CMakeFiles/Remake.dir/flags.make
 CMakeFiles/Remake.dir/src/ListStudents.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.cpp
 CMakeFiles/Remake.dir/src/ListStudents.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Remake.dir/src/ListStudents.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Remake.dir/src/ListStudents.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/ListStudents.cpp.o -MF CMakeFiles/Remake.dir/src/ListStudents.cpp.o.d -o CMakeFiles/Remake.dir/src/ListStudents.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.cpp
 
 CMakeFiles/Remake.dir/src/ListStudents.cpp.i: cmake_force
@@ -184,7 +142,7 @@ CMakeFiles/Remake.dir/src/ListStudents.cpp.s: cmake_force
 CMakeFiles/Remake.dir/src/Undo.cpp.o: CMakeFiles/Remake.dir/flags.make
 CMakeFiles/Remake.dir/src/Undo.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp
 CMakeFiles/Remake.dir/src/Undo.cpp.o: CMakeFiles/Remake.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Remake.dir/src/Undo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Remake.dir/src/Undo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Remake.dir/src/Undo.cpp.o -MF CMakeFiles/Remake.dir/src/Undo.cpp.o.d -o CMakeFiles/Remake.dir/src/Undo.cpp.o -c /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp
 
 CMakeFiles/Remake.dir/src/Undo.cpp.i: cmake_force
@@ -198,9 +156,6 @@ CMakeFiles/Remake.dir/src/Undo.cpp.s: cmake_force
 # Object files for target Remake
 Remake_OBJECTS = \
 "CMakeFiles/Remake.dir/src/main.cpp.o" \
-"CMakeFiles/Remake.dir/src/Student.cpp.o" \
-"CMakeFiles/Remake.dir/src/Course.cpp.o" \
-"CMakeFiles/Remake.dir/src/Class.cpp.o" \
 "CMakeFiles/Remake.dir/src/Changes.cpp.o" \
 "CMakeFiles/Remake.dir/src/Ocupation.cpp.o" \
 "CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o" \
@@ -211,9 +166,6 @@ Remake_OBJECTS = \
 Remake_EXTERNAL_OBJECTS =
 
 Remake: CMakeFiles/Remake.dir/src/main.cpp.o
-Remake: CMakeFiles/Remake.dir/src/Student.cpp.o
-Remake: CMakeFiles/Remake.dir/src/Course.cpp.o
-Remake: CMakeFiles/Remake.dir/src/Class.cpp.o
 Remake: CMakeFiles/Remake.dir/src/Changes.cpp.o
 Remake: CMakeFiles/Remake.dir/src/Ocupation.cpp.o
 Remake: CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o
@@ -221,7 +173,7 @@ Remake: CMakeFiles/Remake.dir/src/ListStudents.cpp.o
 Remake: CMakeFiles/Remake.dir/src/Undo.cpp.o
 Remake: CMakeFiles/Remake.dir/build.make
 Remake: CMakeFiles/Remake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Remake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Remake"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Remake.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

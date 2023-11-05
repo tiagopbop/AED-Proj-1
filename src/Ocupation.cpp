@@ -6,7 +6,7 @@
 #include <sstream>
 #include <algorithm>
 
-void Ocupation::most_students(string in) {
+void Ocupation::most_students(const string& in) {
 
     int pos = 0;
 
@@ -59,14 +59,14 @@ void Ocupation::most_students(string in) {
 }
 
 
-void Ocupation::check_students_by_UCs(string in)
+void Ocupation::check_students_by_UCs(const string& in)
 {
     ifstream file("../schedule/students_classes.csv");
 
     string line;
     string word;
     vector<string> row;
-    string before = "";
+    string before;
     int mid_count = 0;
     int count = 0;
 
@@ -113,7 +113,7 @@ void Ocupation::check_students_by_UCs(string in)
     cout << "\033[1;32mNumber of students registered in at least \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl << endl;
 }
 
-void Ocupation::check_class_occupation(string id) {
+void Ocupation::check_class_occupation(const string& id) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -161,7 +161,7 @@ void Ocupation::check_class_occupation(string id) {
     cout << count << endl << endl;
 }
 
-int Ocupation::check_class_occupation_per_uc(string id,string uc) {
+int Ocupation::check_class_occupation_per_uc(const string& id,const string& uc) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -205,7 +205,7 @@ int Ocupation::check_class_occupation_per_uc(string id,string uc) {
     return count;
 }
 
-void Ocupation::check_UC_occupation(string id) {
+void Ocupation::check_UC_occupation(const string& id) {
     ifstream file("../schedule/students_classes.csv");
 
     string line;
@@ -247,7 +247,7 @@ void Ocupation::check_UC_occupation(string id) {
     cout << count << endl << endl;
 }
 
-void Ocupation::check_year_occupation(string id) {
+void Ocupation::check_year_occupation(const string& id) {
     ifstream file("../schedule/students_classes.csv");
 
     string line;
@@ -293,7 +293,7 @@ void Ocupation::check_year_occupation(string id) {
     cout << count << endl << endl;
 }
 
-void Ocupation::greatest_number(string id) {
+void Ocupation::greatest_number(const string& id) {
 
     ifstream file("../schedule/students_classes.csv");
 

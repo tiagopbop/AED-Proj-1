@@ -21,7 +21,7 @@ public:
     static void set_lastop(string op);
     static void set_ucl(string ucl);
     static void set_undo(bool undo);
-    static void write_log(string id,  string uc, string cc, string op, int cap, string ucl ="",string cl_left = "", bool undo = false);
+    static void write_log(const string& id,  const string& uc, const string& cc, const string& op, string ucl ="", bool undo = false);
     static void go_back(int cap);
     static void check_last();
 

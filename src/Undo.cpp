@@ -1,33 +1,34 @@
 #include "Changes.h"
 #include <iostream>
 #include <fstream>
+#include <utility>
 #include "Undo.h"
 using namespace std;
 
 
 void Undo::set_lastid(string id) {
-    last_id = id;
+    last_id = std::move(id);
 }
 
 void Undo::set_lastuc(string uc) {
-    last_uc = uc;
+    last_uc = std::move(uc);
 }
 
 void Undo::set_lastclass(string cc) {
-    last_class = cc;
+    last_class = std::move(cc);
 }
 
 void Undo::set_lastop(string op) {
-    last_op = op;
+    last_op = std::move(op);
 }
 void Undo::set_ucl(string uc) {
-    ucl = uc;
+    ucl = std::move(uc);
 }
 void Undo::set_undo(bool undo) {
     last_undo = undo;
 }
 
-void Undo::write_log(string id, string ucj, string cc, string op,int cap, string ucl, string cl_l, bool undo) {
+void Undo::write_log(const string& id, const string& ucj, const string& cc, const string& op, string ucl2, bool undo) {
 
     ofstream logia;
     logia.open("../schedule/log.csv",ios::out | ios::app);
@@ -41,7 +42,7 @@ void Undo::write_log(string id, string ucj, string cc, string op,int cap, string
     set_lastuc(ucj);
     set_lastclass(cc);
     set_lastop(op);
-    set_ucl(ucl);
+    set_ucl(std::move(ucl2));
     set_undo(undo);
     if (!undo) {
         logia << id << "," << ucj << "," << cc << "," << op << ",false" << endl;

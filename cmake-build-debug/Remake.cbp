@@ -88,18 +88,6 @@
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Changes.h">
 			<Option target="Remake"/>
 		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.cpp">
-			<Option target="Remake"/>
-		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.h">
-			<Option target="Remake"/>
-		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.cpp">
-			<Option target="Remake"/>
-		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Course.h">
-			<Option target="Remake"/>
-		</Unit>
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.cpp">
 			<Option target="Remake"/>
 		</Unit>
@@ -116,12 +104,6 @@
 			<Option target="Remake"/>
 		</Unit>
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.h">
-			<Option target="Remake"/>
-		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp">
-			<Option target="Remake"/>
-		</Unit>
-		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h">
 			<Option target="Remake"/>
 		</Unit>
 		<Unit filename="/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp">

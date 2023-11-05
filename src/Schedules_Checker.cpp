@@ -4,9 +4,11 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <cmath>
 
 
-void Schedules_Checker::check_schedule_student(string id) {
+
+void Schedules_Checker::check_schedule_student(const string& id) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -43,7 +45,7 @@ void Schedules_Checker::check_schedule_student(string id) {
         }
     }
 }
-void Schedules_Checker::print_schedule_student(string uc, string cc) {
+void Schedules_Checker::print_schedule_student(const string& uc, const string& cc) {
 
     ifstream file("../schedule/classes.csv");
 
@@ -83,13 +85,23 @@ void Schedules_Checker::print_schedule_student(string uc, string cc) {
 
         if (row[0] == cc && row[1] == uc) {
             cout << endl;
-            cout << "\033[0;36m▶  \033[0m" << row[2] << "\033[0;36m  ◆ \033[0m" << "\033[0;36m At \033[0m" << row[3] << "\033[0;36m  ◆  \033[0m" << row[4] << "\033[0;36m hour(s) \033[0m" << "\033[0;36m ◆  \033[0m" << row[5] << " " << row[1] << "\033[0;36m lesson\033[0m" << "\033[0;36m  ◀\033[0m" << endl;
+            if (row[3].size() > 2) {
+                basic_string<char> fla = row[3];
+                cout << "\033[0;36m▶  \033[0m" << row[2] << "\033[0;36m  ◆ \033[0m" << "\033[0;36m At \033[0m" << round(stoi(fla)) << ":30"
+                     << "\033[0;36m  ◆  \033[0m" << row[4] << "\033[0;36m hour(s) \033[0m" << "\033[0;36m ◆  \033[0m"
+                     << row[5] << " " << row[1] << "\033[0;36m lesson\033[0m" << "\033[0;36m  ◀\033[0m" << endl;
+            }
+            else {
+                cout << "\033[0;36m▶  \033[0m" << row[2] << "\033[0;36m  ◆ \033[0m" << "\033[0;36m At \033[0m" << row[3]
+                     << "\033[0;36m  ◆  \033[0m" << row[4] << "\033[0;36m hour(s) \033[0m" << "\033[0;36m ◆  \033[0m"
+                     << row[5] << " " << row[1] << "\033[0;36m lesson\033[0m" << "\033[0;36m  ◀\033[0m" << endl;
+            }
         }
     }
     cout << endl;
 }
 
-void Schedules_Checker::check_schedule_class(string in) {
+void Schedules_Checker::check_schedule_class(const string& in) {
 
     ifstream file("../schedule/classes.csv");
 
@@ -129,7 +141,17 @@ void Schedules_Checker::check_schedule_class(string in) {
 
         if (row[0] == in) {
             cout << endl;
-            cout << "\033[1;32m| \033[0m" << row[2] << "\033[1;32m - At \033[0m" << row[3] << "\033[1;32m - \033[0m" << row[4] << "\033[1;32m hour(s) - \033[0m" << row[5] << " " << row[1] << "\033[1;32m lesson |\033[0m" << endl;
+            if (row[3].size() > 2) {
+                basic_string<char> fla = row[3];
+                cout << "\033[0;36m▶  \033[0m" << row[2] << "\033[0;36m  ◆ \033[0m" << "\033[0;36m At \033[0m" << round(stoi(fla)) << ":30"
+                     << "\033[0;36m  ◆  \033[0m" << row[4] << "\033[0;36m hour(s) \033[0m" << "\033[0;36m ◆  \033[0m"
+                     << row[5] << " " << row[1] << "\033[0;36m lesson\033[0m" << "\033[0;36m  ◀\033[0m" << endl;
+            }
+            else {
+                cout << "\033[0;36m▶  \033[0m" << row[2] << "\033[0;36m  ◆ \033[0m" << "\033[0;36m At \033[0m" << row[3]
+                     << "\033[0;36m  ◆  \033[0m" << row[4] << "\033[0;36m hour(s) \033[0m" << "\033[0;36m ◆  \033[0m"
+                     << row[5] << " " << row[1] << "\033[0;36m lesson\033[0m" << "\033[0;36m  ◀\033[0m" << endl;
+            }
         }
     }
     cout << endl;

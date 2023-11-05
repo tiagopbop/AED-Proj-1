@@ -4,10 +4,6 @@ project(Remake)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Remake src/main.cpp
-        src/Student.h
-        src/Student.cpp
-        src/Course.cpp
-        src/Class.cpp
         src/Changes.h
         src/Changes.cpp
         src/Ocupation.h

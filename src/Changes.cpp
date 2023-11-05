@@ -21,7 +21,7 @@ void Changes::set_cleft(string c)
     c_left = c;
 }
 
-void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, bool undo) {
+void Changes::call_joinuc(const string& id, const string& uc, int cap, const string& cc, bool sw, bool undo) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
@@ -103,7 +103,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, uc, cc, "joinuc", cap, "", "", true);
+                    Undo::write_log(id, uc, cc, "joinuc", "", true);
                     cout << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;
@@ -114,7 +114,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                     return;
                 }
                 cout << "\033[1;34mChoose one from the available classes of UC \033[0m" << uc << "\033[1;34m :\033[0m" << endl;
-                for (auto it: classes) {
+                for (const auto& it: classes) {
 
                     if (Ocupation::check_class_occupation_per_uc(it,uc) < cap) {
                         cout << "\033[1;36m[ \033[0m" << options << "\033[1;36m ]\033[0m" << " " << it << endl;
@@ -134,7 +134,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
                     if (!sw) {
-                        Undo::write_log(id, uc, classes[decision - 1], "joinuc", cap);
+                        Undo::write_log(id, uc, classes[decision - 1], "joinuc");
                         cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl << endl;
                     }
                     Changes::set_cjoined(classes[decision-1]);
@@ -150,7 +150,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, uc, cc, "joinuc", cap, "", "", true);
+                    Undo::write_log(id, uc, cc, "joinuc", "", true);
                     cout << endl << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;
@@ -166,7 +166,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 }
                 if (Changes::check_conflicts(classes[0], uc, id) && !undo) {
                     if (!sw) {
-                        Undo::write_log(id,uc,classes[0],"joinuc",cap);
+                        Undo::write_log(id,uc,classes[0],"joinuc");
                         cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
                         Changes::set_cjoined(classes[0]);
                     }
@@ -199,7 +199,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
 }
 
 
-void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger, bool sw, bool undo) {
+void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj, const string& clas_joined, int cap, bool trigger, bool sw, bool undo) {
 
     string line;
     string word;
@@ -275,46 +275,51 @@ void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined,
         return;
     }
 
-    for (auto l : rawr) {
+    for (const auto& l : rawr) {
         fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
     }
 
     if (!sw && !undo) {
         cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << uc << endl << endl;
         set_cleft(cc);
-        Undo::write_log(id,uc,cc,"leaveuc",cap);
+        Undo::write_log(id,uc,cc,"leaveuc");
+    }
+    else if (!sw && undo) {
+        cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << uc << endl << endl;
+        set_cleft(cc);
+        Undo::write_log(id,uc,cc,"leaveuc", "", true);
     }
     else if (sw && !trigger && !undo) {
         cout << "\033[1;32mSwapped from \033[0m" << uc << "\033[1;32m to \033[0m" << ucj << "\033[1;32m successfully \033[0m" << endl << endl;
     }
-    else if (!undo) {
+    else {
         cout << "\033[1;32mSwapped from \033[0m" << cc << "\033[1;32m to \033[0m" << clas_joined << "\033[1;32m successfully \033[0m" << endl << endl;
     }
 
 
 }
 
-void Changes::call_swapuc(string id, string ucl, string ucj, int cap) {
+void Changes::call_swapuc(const string& id, const string& ucl, const string& ucj, int cap) {
     success = true;
     Changes::call_joinuc(id, ucj, cap,"", true, false);
     if (!success) {
         return;
     }
     Changes::call_leaveuc(id, ucl, ucj, "", cap,false, true);
-    Undo::write_log(id,ucj,c_joined,"swapuc", cap);
+    Undo::write_log(id,ucj,c_joined,"swapuc");
 }
 
-void Changes::call_swapclass(string id, string uc, int cap) {
+void Changes::call_swapclass(const string& id, const string& uc, int cap) {
     success = true;
     Changes::call_joinuc(id, uc, cap, "", true, false);
     if (!success) {
         return;
     }
     Changes::call_leaveuc(id, uc, "", c_joined, cap, true,true);
-    Undo::write_log(id,uc,c_joined,"swapclass",cap);
+    Undo::write_log(id,uc,c_joined,"swapclass");
 }
 
-void Changes::call_multi(string id, int cap, queue<string> operations) {
+void Changes::call_multi(const string& id, int cap, queue<string> operations) {
 
     string in;
 
@@ -334,7 +339,7 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
         switch (decision) {
             case 1:
 
-                operations.push("joinuc");
+                operations.emplace("joinuc");
                 cout << "\033[1;34mUC to join: \033[0m";
                 cin >> in;
                 cout << endl;
@@ -343,7 +348,7 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
 
             case 2:
 
-                operations.push("leaveuc");
+                operations.emplace("leaveuc");
                 cout << "\033[1;34mUC to leave: \033[0m";
                 cin >> in;
                 cout << endl;
@@ -352,7 +357,7 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
 
             case 3:
 
-                operations.push("swapuc");
+                operations.emplace("swapuc");
                 cout << "\033[1;34mUC to leave: \033[0m";
                 cin >> in;
                 operations.push(in);
@@ -364,7 +369,7 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
 
             case 4:
 
-                operations.push("swapclass");
+                operations.emplace("swapclass");
                 cout << "\033[1;34mUC in question: \033[0m";
                 cin >> in;
                 cout << endl;
@@ -401,7 +406,7 @@ void Changes::call_multi(string id, int cap, queue<string> operations) {
     }
 }
 
-void Changes::execute_requests(queue<string> operations, string id, int cap) {
+void Changes::execute_requests(queue<string> operations, const string& id, int cap) {
 
     string operation;
     string uc1;
@@ -448,14 +453,14 @@ void Changes::execute_requests(queue<string> operations, string id, int cap) {
     cout << "\033[1;32mAll queued operations executed\033[0m" << endl << endl;
 }
 
-void Changes::available_classes(vector<string>& vect,string uc) {
+void Changes::available_classes(vector<string>& vect,const string& uc) {
     int max_students = 0;
     int min_students = 9999;
-    string max_class = "";
-    string min_class = "";
+    string max_class;
+    string min_class;
     vector <string> mins;
     int tam = 0;
-    for(auto a: vect)
+    for(const auto& a: vect)
     {
         tam = Ocupation::check_class_occupation_per_uc(a,uc);
         if(tam > max_students){max_students=tam; max_class=a;}
@@ -470,7 +475,7 @@ void Changes::available_classes(vector<string>& vect,string uc) {
     else if (max_students-min_students > 4) {
         mins.push_back(min_class);
         vect.erase(find(vect.begin(), vect.end(), min_class));
-        for (auto it : vect) {
+        for (const auto& it : vect) {
             tam = Ocupation::check_class_occupation_per_uc(it,uc);
             if (tam == min_students) {
                 min_class = it;
@@ -487,19 +492,19 @@ void Changes::available_classes(vector<string>& vect,string uc) {
     }
 }
 
-bool Changes::check_conflicts(string cc, string uc, string id) {
+bool Changes::check_conflicts(const string& cc, const string& uc, const string& id) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes.csv");
 
     if (!file1.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
-        return 0;
+        return false;
     }
 
     if (!file2.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
-        return 0;
+        return false;
     }
 
     string line1;
@@ -577,16 +582,16 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
 
         if (row1[0] == id) {
 
-            ifstream file2("../schedule/classes.csv");
+            ifstream file3("../schedule/classes.csv");
 
-            if (!file2.is_open()) {
+            if (!file3.is_open()) {
                 cerr << "FAILED TO OPEN THE FILE" << endl;
-                return 0;
+                return false;
             }
 
-            getline(file2, line2);
+            getline(file3, line2);
 
-            while (getline(file2, line2)) {
+            while (getline(file3, line2)) {
 
                 row2.clear();
                 stringstream iss2(line2);
@@ -614,7 +619,7 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
                     hour_start_old = row2[3];
                     hour_finish_old = to_string(stof(row2[3]) + stof(row2[4]));
 
-                    for(auto a : ra)
+                    for(const auto& a : ra)
                     {
                         if (a.day == day_old) {
                             if (a.hs > hour_start_old && hour_finish_old > a.hs || a.hf > hour_start_old && a.hf < hour_finish_old) {
