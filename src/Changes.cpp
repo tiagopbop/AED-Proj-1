@@ -262,7 +262,7 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
         rawr.push_back(a);
     }
 
-    if(!in_uc && !second_button) {
+    if(!in_uc || (!second_button && sw)) {
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
         if (sw) {
             Changes::call_leaveuc(id, ucj, "", "", cap, true, true , true);
