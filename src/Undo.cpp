@@ -47,69 +47,6 @@ void Undo::write_log(string id, string ucj, string cc, string op,int cap, string
 
 
 void Undo::go_back(int cap) {
-    string line;
-    string word;
-    string cc;
-    vector<string> row;
-
-    bool in_uc = false;
-
-    struct std {
-        string id;
-        string name;
-        string uc;
-        string cc;
-    };
-    std a = {"StudentCode", "UcCode", "ClassCode", "Operation"};
-    vector<std> rawr;
-    rawr.push_back(a);
-
-
-    ifstream file("../schedule/log.csv");
-    if (!file.is_open()) {
-        cerr << "FAILED TO OPEN THE FILE" << endl;
-        return;
-    }
-
-    getline(file, line);
-
-    cout << endl;
-
-    while (getline(file, line)) {
-
-        row.clear();
-        stringstream iss(line);
-
-        getline(iss, word, ',');
-        row.push_back(word);
-
-        getline(iss, word, ',');
-        row.push_back(word);
-
-        getline(iss, word, ',');
-        row.push_back(word);
-
-        iss >> word;
-        row.push_back(word);
-
-        if (row[0] == last_id && row[1] == last_uc && row[2] == last_class && row[3] == last_op) {
-            continue;
-        } else {
-            a = {row[0], row[1], row[2], row[3]};
-            rawr.push_back(a);
-        }
-    }
-
-    ofstream fil("../schedule/log.csv");
-    if (!fil.is_open()) {
-        cerr << "FAILED TO OPEN THE FILE" << endl;
-        return;
-    }
-
-    for (auto l: rawr) {
-        fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
-    }
-
 
     if (last_op == "joinuc") {
         Changes::call_leaveuc(last_id, last_uc, "", "", cap);
