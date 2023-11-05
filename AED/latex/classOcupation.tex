@@ -1,0 +1,79 @@
+\hypertarget{classOcupation}{}\doxysection{Ocupation Class Reference}
+\label{classOcupation}\index{Ocupation@{Ocupation}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOcupation_aeeaa87d1e325736eee2b757973cdd10f}\label{classOcupation_aeeaa87d1e325736eee2b757973cdd10f}} 
+static void {\bfseries most\+\_\+students} (const string \&in)
+\item 
+static int \mbox{\hyperlink{classOcupation_a006b8465aad77052a68d5fe289b98da8}{check\+\_\+class\+\_\+occupation\+\_\+per\+\_\+uc}} (const string \&id, const string \&uc)
+\begin{DoxyCompactList}\small\item\em Check the occupation of a specific class within a university class (UC). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOcupation_a8c93e32d8f9ecd556870305fab8506d6}\label{classOcupation_a8c93e32d8f9ecd556870305fab8506d6}} 
+static void {\bfseries check\+\_\+class\+\_\+occupation} (const string \&id, const string \&uc)
+\item 
+static void \mbox{\hyperlink{classOcupation_ad7a21b5d7610d98247d24b339b093636}{check\+\_\+students\+\_\+by\+\_\+\+UCs}} (const string \&in)
+\begin{DoxyCompactList}\small\item\em Checks the number of students registered in at least a certain number of University Classes (UCs). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOcupation_aee69e431a8cc5be8d60b54801370f7d3}\label{classOcupation_aee69e431a8cc5be8d60b54801370f7d3}} 
+static void {\bfseries check\+\_\+\+UC\+\_\+occupation} (const string \&id)
+\item 
+\mbox{\Hypertarget{classOcupation_a9f2335c647ac81b01ee5f05f418698c2}\label{classOcupation_a9f2335c647ac81b01ee5f05f418698c2}} 
+static void {\bfseries check\+\_\+year\+\_\+occupation} (const string \&id)
+\item 
+static void \mbox{\hyperlink{classOcupation_a04707261af47a8676e79ea62c8b6f8a0}{greatest\+\_\+number}} (const string \&id)
+\begin{DoxyCompactList}\small\item\em Find and display the classes with the highest number of students enrolled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOcupation_a006b8465aad77052a68d5fe289b98da8}\label{classOcupation_a006b8465aad77052a68d5fe289b98da8}} 
+\index{Ocupation@{Ocupation}!check\_class\_occupation\_per\_uc@{check\_class\_occupation\_per\_uc}}
+\index{check\_class\_occupation\_per\_uc@{check\_class\_occupation\_per\_uc}!Ocupation@{Ocupation}}
+\doxysubsubsection{\texorpdfstring{check\_class\_occupation\_per\_uc()}{check\_class\_occupation\_per\_uc()}}
+{\footnotesize\ttfamily int Ocupation\+::check\+\_\+class\+\_\+occupation\+\_\+per\+\_\+uc (\begin{DoxyParamCaption}\item[{const string \&}]{id,  }\item[{const string \&}]{uc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check the occupation of a specific class within a university class (UC). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the class to be checked. \\
+\hline
+{\em uc} & The university class (UC) to which the class belongs.\\
+\hline
+\end{DoxyParams}
+This function reads the enrollment data from the \char`\"{}students\+\_\+classes.\+csv\char`\"{} file and counts the number of students enrolled in a specific class within a given university class (UC). \mbox{\Hypertarget{classOcupation_ad7a21b5d7610d98247d24b339b093636}\label{classOcupation_ad7a21b5d7610d98247d24b339b093636}} 
+\index{Ocupation@{Ocupation}!check\_students\_by\_UCs@{check\_students\_by\_UCs}}
+\index{check\_students\_by\_UCs@{check\_students\_by\_UCs}!Ocupation@{Ocupation}}
+\doxysubsubsection{\texorpdfstring{check\_students\_by\_UCs()}{check\_students\_by\_UCs()}}
+{\footnotesize\ttfamily void Ocupation\+::check\+\_\+students\+\_\+by\+\_\+\+UCs (\begin{DoxyParamCaption}\item[{const string \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the number of students registered in at least a certain number of University Classes (UCs). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The minimum number of UCs a student must be registered in to be counted.\\
+\hline
+\end{DoxyParams}
+This function reads data from a CSV file containing student-\/class registrations and counts the number of students who are registered in at least a certain number of UCs. The minimum required UC count is specified by the \textquotesingle{}in\textquotesingle{} parameter. \mbox{\Hypertarget{classOcupation_a04707261af47a8676e79ea62c8b6f8a0}\label{classOcupation_a04707261af47a8676e79ea62c8b6f8a0}} 
+\index{Ocupation@{Ocupation}!greatest\_number@{greatest\_number}}
+\index{greatest\_number@{greatest\_number}!Ocupation@{Ocupation}}
+\doxysubsubsection{\texorpdfstring{greatest\_number()}{greatest\_number()}}
+{\footnotesize\ttfamily void Ocupation\+::greatest\+\_\+number (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find and display the classes with the highest number of students enrolled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The number of classes with the highest enrollment to display.\\
+\hline
+\end{DoxyParams}
+This function reads enrollment data from the \char`\"{}students\+\_\+classes.\+csv\char`\"{} file and identifies the classes with the highest number of students enrolled. It then displays the specified number of classes with the highest enrollment. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Ocupation.\+h\item 
+src/Ocupation.\+cpp\end{DoxyCompactItemize}

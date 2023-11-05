@@ -1,0 +1,79 @@
+\hypertarget{classUndo}{}\doxysection{Undo Class Reference}
+\label{classUndo}\index{Undo@{Undo}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUndo_a9b06afa991e3a184c3462e72d1b12b02}\label{classUndo_a9b06afa991e3a184c3462e72d1b12b02}} 
+static void {\bfseries set\+\_\+lastid} (string id)
+\item 
+\mbox{\Hypertarget{classUndo_a8bc9ebbd46c7af696bcb939817c09e25}\label{classUndo_a8bc9ebbd46c7af696bcb939817c09e25}} 
+static void {\bfseries set\+\_\+lastuc} (string uc)
+\item 
+\mbox{\Hypertarget{classUndo_a82769c353a820fde33e3e912676fecf9}\label{classUndo_a82769c353a820fde33e3e912676fecf9}} 
+static void {\bfseries set\+\_\+lastclass} (string cc)
+\item 
+\mbox{\Hypertarget{classUndo_a95d512122e385db2874b452d36c6b316}\label{classUndo_a95d512122e385db2874b452d36c6b316}} 
+static void {\bfseries set\+\_\+lastop} (string op)
+\item 
+\mbox{\Hypertarget{classUndo_a4090f770a8b1ad27a5d90dab4019748c}\label{classUndo_a4090f770a8b1ad27a5d90dab4019748c}} 
+static void {\bfseries set\+\_\+ucl} (string ucl)
+\item 
+\mbox{\Hypertarget{classUndo_a40a63704ef6cd4d726f53e66f475b5d4}\label{classUndo_a40a63704ef6cd4d726f53e66f475b5d4}} 
+static void {\bfseries set\+\_\+undo} (bool undo)
+\item 
+static void \mbox{\hyperlink{classUndo_aadb6882a707a021177bde64d49f848fb}{write\+\_\+log}} (const string \&id, const string \&uc, const string \&cc, const string \&op, string ucl=\char`\"{}\char`\"{}, bool undo=false)
+\begin{DoxyCompactList}\small\item\em Write a log entry to a log file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classUndo_a2924f3a64b1f9264f8b09de056479a8f}{go\+\_\+back}} (int cap)
+\begin{DoxyCompactList}\small\item\em Reverts the most recent student operation and sets an undo flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUndo_a40455d9a6abbf7e5b3234171a74611ce}\label{classUndo_a40455d9a6abbf7e5b3234171a74611ce}} 
+static void {\bfseries check\+\_\+last} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUndo_a2924f3a64b1f9264f8b09de056479a8f}\label{classUndo_a2924f3a64b1f9264f8b09de056479a8f}} 
+\index{Undo@{Undo}!go\_back@{go\_back}}
+\index{go\_back@{go\_back}!Undo@{Undo}}
+\doxysubsubsection{\texorpdfstring{go\_back()}{go\_back()}}
+{\footnotesize\ttfamily void Undo\+::go\+\_\+back (\begin{DoxyParamCaption}\item[{int}]{cap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reverts the most recent student operation and sets an undo flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & The capacity (maximum number of students) for a class.\\
+\hline
+\end{DoxyParams}
+This function is used to undo the most recent student operation and sets an undo flag to indicate that the operation is being reversed. It determines the type of operation (e.\+g., joinuc, leaveuc, swapuc, swapclass) performed and invokes the appropriate corresponding operation to revert the change. The student\textquotesingle{}s previous state is restored. \mbox{\Hypertarget{classUndo_aadb6882a707a021177bde64d49f848fb}\label{classUndo_aadb6882a707a021177bde64d49f848fb}} 
+\index{Undo@{Undo}!write\_log@{write\_log}}
+\index{write\_log@{write\_log}!Undo@{Undo}}
+\doxysubsubsection{\texorpdfstring{write\_log()}{write\_log()}}
+{\footnotesize\ttfamily void Undo\+::write\+\_\+log (\begin{DoxyParamCaption}\item[{const string \&}]{id,  }\item[{const string \&}]{uc,  }\item[{const string \&}]{cc,  }\item[{const string \&}]{op,  }\item[{string}]{ucl = {\ttfamily \char`\"{}\char`\"{}},  }\item[{bool}]{undo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write a log entry to a log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the student. \\
+\hline
+{\em ucj} & The code of the university class (UC) to join. \\
+\hline
+{\em cc} & The class code (CC) for the class. \\
+\hline
+{\em op} & The type of operation to log (e.\+g., \char`\"{}joinuc,\char`\"{} \char`\"{}leaveuc,\char`\"{} \char`\"{}swapuc,\char`\"{} \char`\"{}swapclass\char`\"{}). \\
+\hline
+{\em ucl2} & The code of the university class (UC) to leave (optional). \\
+\hline
+{\em undo} & A boolean flag indicating whether the operation is an undo action (true) or not (false).\\
+\hline
+\end{DoxyParams}
+This function appends a log entry to a log file, recording student operations such as joining or leaving university classes and classes. The log entry includes student ID, UC code, class code, operation type, and an undo flag. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Undo.\+h\item 
+src/Undo.\+cpp\end{DoxyCompactItemize}

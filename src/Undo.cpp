@@ -31,7 +31,7 @@ void Undo::set_undo(bool undo) {
 void Undo::write_log(const string& id, const string& ucj, const string& cc, const string& op, string ucl2, bool undo) {
 
     ofstream logia;
-    logia.open("../schedule/log.csv",ios::out | ios::app);
+    logia.open("../log.csv",ios::out | ios::app);
 
     if (!logia.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
