@@ -83,6 +83,7 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
             if (row[2] == uc) {
                 if (!sw || trigger) {
                     cout << "\033[1;33mYou are already in that UC\033[0m" << endl << endl;
+                    success = false;
                     return;
                 }
             }
