@@ -264,6 +264,9 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
 
     if(!in_uc && !second_button) {
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
+        if (sw) {
+            Changes::call_leaveuc(id, ucj, "", "", cap, true, true , true);
+        }
         return;
     }
 
@@ -292,11 +295,9 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
     else if (sw && !trigger && !undo) {
         cout << "\033[1;32mSwapped from \033[0m" << uc << "\033[1;32m to \033[0m" << ucj << "\033[1;32m successfully \033[0m" << endl << endl;
     }
-    else {
+    else if (sw && trigger && !undo) {
         cout << "\033[1;32mSwapped from \033[0m" << cc << "\033[1;32m to \033[0m" << clas_joined << "\033[1;32m successfully \033[0m" << endl << endl;
     }
-
-
 }
 
 void Changes::call_swapuc(const string& id, const string& ucl, const string& ucj, int cap) {

@@ -76,9 +76,19 @@ void Undo::go_back(int cap) {
 
 void Undo::check_last() {
     cout << "\033[1;33mID: \033[0m" << last_id << endl;
-    cout << "\033[1;33mUC: \033[0m" << last_uc << endl;
-    cout << "\033[1;33mClass left (if Operation = leaveuc) or joined (if Operation = swapuc/swapclass/joinuc): \033[0m" << last_class << endl;
     cout << "\033[1;33mOperation: \033[0m" << last_op << endl;
+    if (last_op == "leaveuc") {
+        cout << "\033[1;33mUC left: \033[0m" << last_uc << endl;
+        cout << "\033[1;33mClass left: \033[0m" << last_class << endl;
+    }
+    else if (last_op == "swapclass") {
+        cout << "\033[1;33mUC: \033[0m" << last_uc << endl;
+        cout << "\033[1;33mClass joined: \033[0m" << last_class << endl;
+    }
+    else {
+        cout << "\033[1;33mUC joined: \033[0m" << last_uc << endl;
+        cout << "\033[1;33mClass joined \033[0m" << last_class << endl;
+    }
     cout << "\033[1;33mUndoOperation: \033[0m" << last_undo << endl << endl;
 }
 
