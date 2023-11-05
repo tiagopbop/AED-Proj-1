@@ -64,7 +64,8 @@ int main() {
                 cout << "\033[1;34mDo you want to check a class, UC or year?\033[0m\n";
                 cout << "\033[1;36m[ 1 ]\033[0m" << " Class" << endl;
                 cout << "\033[1;36m[ 2 ]\033[0m" << " UC" << endl;
-                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl << endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl;
+                cout << "\033[1;33m[ 9 ]\033[0m" << " Go back" << endl << endl;
 
                 cout << "\033[1;34mDecision: \033[0m";
                 cin >> decision;
@@ -86,14 +87,20 @@ int main() {
                     ListStudents::check_UC_students(in);
 
                 }
-                else {
+                else if (decision == 3) {
 
                     cout << "\033[1;34mWhich year: \033[0m";
                     cin >> in;
                     ListStudents::check_year_students(in);
 
                 }
-                break;
+                else if (decision == 9) {
+                    break;
+                }
+                else {
+                    cout << "\033[0;31mUnrecognized option\033[0m" << endl;
+                    break;
+                }
 
             case 4:
 
@@ -104,10 +111,11 @@ int main() {
 
             case 5:
 
-                cout << "\033[1;34mDo you want to check the occupation of a class, UC or year: \033[0m";
+                cout << "\033[1;34mDo you want to check the occupation of a class, UC or year: \033[0m\n";
                 cout << "\033[1;36m[ 1 ]\033[0m" << " Class" << endl;
                 cout << "\033[1;36m[ 2 ]\033[0m" << " UC" << endl;
-                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl << endl;
+                cout << "\033[1;36m[ 3 ]\033[0m" << " Year" << endl;
+                cout << "\033[1;33m[ 9 ]\033[0m" << " Go back" << endl << endl;
 
                 cout << "\033[1;34mDecision: \033[0m";
                 cin >> decision;
@@ -127,14 +135,20 @@ int main() {
                     Ocupation::check_UC_occupation(in);
 
                 }
-                else {
+                else if (decision == 3) {
 
                     cout << "\033[1;34mWhich year: \033[0m";
                     cin >> in;
                     Ocupation::check_year_occupation(in);
 
                 }
-                break;
+                else if (decision == 9) {
+                    break;
+                }
+                else {
+                    cout << "\033[0;31mUnrecognized option\033[0m" << endl;
+                    break;
+                }
 
             case 6:
 
@@ -157,7 +171,8 @@ int main() {
                 cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
                 cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
                 cout << "\033[1;36m[ 5 ]\033[0m" << " Queued operations" << endl;
-                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Go back\033[0m" << endl;
+                cout << "\033[1;33m[ 9 ]\033[0m" << " Go back" << endl;
+                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
 
                 cout << endl << "\033[1;34mDecision: \033[0m";
                 cin >> decision;
@@ -211,9 +226,14 @@ int main() {
                         Changes::call_multi(id1, cap, operations);
                         break;
 
-                    case 0:
+                    case 9:
 
                         break;
+
+                    case 0:
+
+                        cerr << "Program closed" << endl;
+                        return 0;
 
                     default:
 
@@ -225,8 +245,9 @@ int main() {
             case 9:
 
                 cout << "\033[1;36m[ 1 ]\033[0m" << " Undo last operation" <<endl;
-                cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
-                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Go back\033[0m" << endl;
+                cout << "\033[1;36m[ 2 ]\033[0m" << " Check last operation" <<endl;
+                cout << "\033[1;33m[ 9 ]\033[0m" << " Go back" << endl;
+                cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
 
                 cout << endl << "\033[1;34mDecision: \033[0m";
                 cin >> decision;
@@ -238,9 +259,19 @@ int main() {
                         Undo::go_back(cap);
                         break;
 
-                    case 0:
+                    case 2:
+
+                        Undo::check_last();
+                        break;
+
+                    case 9:
 
                         break;
+
+                    case 0:
+
+                        cerr << "Program closed" << endl;
+                        return 0;
 
                     default:
 

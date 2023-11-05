@@ -10,8 +10,9 @@ using namespace std;
 
 class Changes {
 private:
-     inline static string c_joined;
+    inline static string c_joined;
     inline static string c_left;
+    inline static bool success = true;
 
 public:
 
@@ -21,7 +22,7 @@ public:
 
     static void set_cleft(string c);
 
-    static void call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger = false, bool sw = false);
+    static void call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger = false, bool sw = false, bool undo = false);
 
     static void call_swapuc(string id, string ucl, string ucj, int cap);
 
@@ -35,7 +36,6 @@ public:
 
     static bool check_conflicts(string cc, string uc, string id);
 
-    void call_joinuc_force(string id, string name, string uc, string cl);
 };
 
 

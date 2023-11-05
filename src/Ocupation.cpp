@@ -12,13 +12,12 @@ void Ocupation::most_students(string in) {
     string line;
     string word;
     vector<string> row;
-    vector<string> past_names;
 
-    const int MAX = 10000;
+    const int MAX = 1000000;
     string words[MAX];
+    string ucs[MAX];
     int inst[MAX];
     int count = 0;
-    int reverse_count = 0;
 
     if (!file.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
@@ -30,6 +29,8 @@ void Ocupation::most_students(string in) {
     cout << endl;
 
     while (getline(file, line)) {
+
+        bool flag = false;
 
         row.clear();
         stringstream iss(line);
@@ -45,27 +46,28 @@ void Ocupation::most_students(string in) {
 
         iss >> word;
         row.push_back(word);
-        auto it = find(past_names.begin(), past_names.end(), row[0]);
 
-        if (it == past_names.end()) {
-            past_names.push_back(row[0]);
-            for (int i = 0; i < count; i++) {
-                if (row[3] == words[i]) {
-                    inst[i]++;
-                    break;
-                }
+        for (int i = 0; i < count; i++) {
+            if (row[3] == words[i] && row[2] == ucs[i]) {
+                inst[i]++;
+                flag = true;
+                break;
             }
+        }
+        if (!flag) {
+            ucs[count] = row[2];
             words[count] = row[3];
             inst[count] = 1;
             count++;
         }
     }
 
+    string topWord;
+    string topUc;
 
     for (int a = 0; a < stoi(in); a++) {
         int topIndex = 0;
         int topCount = inst[0];
-        string topWord = words[0];
 
         for (int i = 1; i < count; i++) {
             if (inst[i] > topCount) {
@@ -74,7 +76,8 @@ void Ocupation::most_students(string in) {
             }
         }
         topWord = words[topIndex];
-        cout << topCount << "\033[1;32m students in \033[0m" << topWord << endl;
+        topUc = ucs[topIndex];
+        cout << topCount << "\033[1;32m students in \033[0m" << topWord << " of " << topUc << endl;
         inst[topIndex] = 0;
     }
     cout << endl;
@@ -353,11 +356,12 @@ void Ocupation::greatest_number(string id) {
         iss >> word;
         row.push_back(word);
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++) {
             if (row[2] == words[i]) {
                 inst[i]++;
                 break;
             }
+        }
         words[count] = row[2];
         inst[count] = 1;
         count++;
