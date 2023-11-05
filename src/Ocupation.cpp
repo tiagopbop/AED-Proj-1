@@ -7,30 +7,24 @@
 #include <algorithm>
 
 void Ocupation::most_students(string in) {
-    ifstream file("../schedule/students_classes.csv");
 
-    string line;
-    string word;
-    vector<string> row;
+    int pos = 0;
 
-    const int MAX = 1000000;
-    string words[MAX];
-    string ucs[MAX];
-    int inst[MAX];
-    int count = 0;
-
+    ifstream file("../schedule/classes_per_uc.csv");
     if (!file.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
         return;
     }
-
+    string line;
+    string word;
+    vector<string> row;
     getline(file, line);
 
-    cout << endl;
+    vector<string> uc;
+    vector<string> cl;
+    vector<int> count;
 
     while (getline(file, line)) {
-
-        bool flag = false;
 
         row.clear();
         stringstream iss(line);
@@ -38,50 +32,32 @@ void Ocupation::most_students(string in) {
         getline(iss, word, ',');
         row.push_back(word);
 
-        getline(iss, word, ',');
-        row.push_back(word);
-
-        getline(iss, word, ',');
-        row.push_back(word);
-
         iss >> word;
         row.push_back(word);
 
-        for (int i = 0; i < count; i++) {
-            if (row[3] == words[i] && row[2] == ucs[i]) {
-                inst[i]++;
-                flag = true;
-                break;
-            }
-        }
-        if (!flag) {
-            ucs[count] = row[2];
-            words[count] = row[3];
-            inst[count] = 1;
-            count++;
-        }
-    }
+        uc.push_back(row[0]);
+        cl.push_back(row[1]);
+        count.push_back(Ocupation::check_class_occupation_per_uc(row[1],row[0]));
+        pos++;
 
-    string topWord;
-    string topUc;
+    }
 
     for (int a = 0; a < stoi(in); a++) {
         int topIndex = 0;
-        int topCount = inst[0];
-
-        for (int i = 1; i < count; i++) {
-            if (inst[i] > topCount) {
-                topCount = inst[i];
+        int topCount = count[0];
+        for (int i = 1; i < pos; i++) {
+            if (count[i] > topCount) {
+                topCount = count[i];
                 topIndex = i;
             }
         }
-        topWord = words[topIndex];
-        topUc = ucs[topIndex];
-        cout << topCount << "\033[1;32m students in \033[0m" << topWord << " of " << topUc << endl;
-        inst[topIndex] = 0;
+
+        cout << topCount << "\033[1;32m students from \033[0m" << cl[topIndex] << " of " << uc[topIndex] << endl;
+        count[topIndex] = 0;
     }
     cout << endl;
 }
+
 
 void Ocupation::check_students_by_UCs(string in)
 {
