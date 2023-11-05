@@ -110,7 +110,7 @@ void Ocupation::check_students_by_UCs(string in)
     }
 
     cout << endl;
-    cout << "\033[1;32mNumber of students registered in \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl << endl;
+    cout << "\033[1;32mNumber of students registered in at least \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl << endl;
 }
 
 void Ocupation::check_class_occupation(string id) {

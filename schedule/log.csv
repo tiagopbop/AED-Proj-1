@@ -13,3 +13,4 @@ StudentCode,UcCode,ClassCode,Operation,UndoOperation
 202058297,L.EIC011,2LEIC09,swapuc,false
 202024467,L.EIC002,1LEIC02,leaveuc,false
 202024467,L.EIC002,1LEIC02,joinuc,true
+201960762,L.EIC013,2LEIC12,leaveuc,false

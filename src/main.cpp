@@ -101,6 +101,7 @@ int main() {
                     cout << "\033[0;31mUnrecognized option\033[0m" << endl;
                     break;
                 }
+                break;
 
             case 4:
 
@@ -149,6 +150,7 @@ int main() {
                     cout << "\033[0;31mUnrecognized option\033[0m" << endl;
                     break;
                 }
+                break;
 
             case 6:
 
