@@ -39,6 +39,6 @@ void Class::set_StartHour(float sh) {
 void Class::set_Duration(float dr) {
     this->Duration= dr;
 }
-string Class::set_type(string ty) {
+void Class::set_type(string ty) {
     this->Type = ty;
 }
