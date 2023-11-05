@@ -92,7 +92,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
 
     }
 
-    if (ucs.size() < 7 || sw) {
+    if (ucs.size() < 7 || (sw && ucs.size() == 7)) {
         Changes::available_classes(classes, uc);
         int options = 1;
         int decision;
@@ -103,10 +103,14 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, uc, cc, "joinuc", cap);
-                    cout << endl << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
+                    Undo::write_log(id, uc, cc, "joinuc", cap, "", "", true);
+                    cout << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;
+                    return;
+                }
+                else if (undo && !Changes::check_conflicts(cc, uc, id)){
+                    cout << endl << "\033[1;31mIt wasn't possible to undo due to schedule conflicts\033[0m" << endl << endl;
                     return;
                 }
                 cout << "\033[1;34mChoose one from the available classes of UC \033[0m" << uc << "\033[1;34m :\033[0m" << endl;
@@ -122,6 +126,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 cin >> decision;
 
                 if (decision == 0) {
+                    success = false;
                     return;
                 }
                 else if (Changes::check_conflicts(classes[decision - 1], uc, id)) {
@@ -131,9 +136,8 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                     if (!sw) {
                         Undo::write_log(id, uc, classes[decision - 1], "joinuc", cap);
                         cout << endl << "\033[1;32mYou were assigned to the chosen class successfully\033[0m" << endl << endl;
-                        Changes::set_cjoined(classes[decision-1]);
-
                     }
+                    Changes::set_cjoined(classes[decision-1]);
                     filew << id << "," << name << "," << uc << "," << classes[decision-1] << endl;
 
                 }
@@ -146,13 +150,21 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, uc, cc, "joinuc", cap);
+                    Undo::write_log(id, uc, cc, "joinuc", cap, "", "", true);
                     cout << endl << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;
                     return;
                 }
-                if (Changes::check_conflicts(classes[0], uc, id)) {
+                else if (undo && !Changes::check_conflicts(cc, uc, id) && !sw) {
+                    cout << endl << "\033[1;31mIt wasn't possible to undo due to schedule conflicts\033[0m" << endl << endl;
+                    return;
+                }
+                else if (undo && !Changes::check_conflicts(cc, uc, id) && sw) {
+                    cout << endl << "\033[1;31mIt wasn't possible to undo due to schedule conflicts but you were still removed from the current UC/class prior to the undo\033[0m" << endl << endl;
+                    return;
+                }
+                if (Changes::check_conflicts(classes[0], uc, id) && !undo) {
                     if (!sw) {
                         Undo::write_log(id,uc,classes[0],"joinuc",cap);
                         cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
@@ -166,6 +178,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 else {
                     cout << "\033[1;31mWe could not assign you to any class from the given UC due to schedule conflicts\033[0m" << endl << endl;
                     if (sw) {
+                        success = false;
                         return;
                     }
                 }
@@ -174,18 +187,19 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
         else {
             cout << "\033[1;31mThere are no available classes for you to join\033[0m" << endl << endl;
             if (sw) {
+                success = false;
                 return;
             }
         }
     }
     else {
         cout << "\033[1;31mYou cannot join any more UCs (Max. 7)\033[0m" << endl << endl;
+        success = false;
     }
-
 }
 
 
-void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger, bool sw) {
+void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined, int cap, bool trigger, bool sw, bool undo) {
 
     string line;
     string word;
@@ -250,7 +264,6 @@ void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined,
 
     if(!in_uc && !second_button) {
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
-        // Undo da join passada
         return;
     }
 
@@ -266,15 +279,15 @@ void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined,
         fil << l.id << "," << l.name << "," << l.uc << "," << l.cc << endl;
     }
 
-    if (!sw) {
+    if (!sw && !undo) {
         cout << "\033[1;32mStudent \033[0m" << id << "\033[1;32m successfully removed from \033[0m" << uc << endl << endl;
         set_cleft(cc);
         Undo::write_log(id,uc,cc,"leaveuc",cap);
     }
-    else if (sw && !trigger) {
+    else if (sw && !trigger && !undo) {
         cout << "\033[1;32mSwapped from \033[0m" << uc << "\033[1;32m to \033[0m" << ucj << "\033[1;32m successfully \033[0m" << endl << endl;
     }
-    else {
+    else if (!undo) {
         cout << "\033[1;32mSwapped from \033[0m" << cc << "\033[1;32m to \033[0m" << clas_joined << "\033[1;32m successfully \033[0m" << endl << endl;
     }
 
@@ -282,15 +295,23 @@ void Changes::call_leaveuc(string id, string uc, string ucj, string clas_joined,
 }
 
 void Changes::call_swapuc(string id, string ucl, string ucj, int cap) {
+    success = true;
     Changes::call_joinuc(id, ucj, cap,"", true, false);
+    if (!success) {
+        return;
+    }
     Changes::call_leaveuc(id, ucl, ucj, "", cap,false, true);
-    Undo::write_log(id,ucj,c_left,"swapuc", cap, ucl);
+    Undo::write_log(id,ucj,c_joined,"swapuc", cap);
 }
 
 void Changes::call_swapclass(string id, string uc, int cap) {
+    success = true;
     Changes::call_joinuc(id, uc, cap, "", true, false);
+    if (!success) {
+        return;
+    }
     Changes::call_leaveuc(id, uc, "", c_joined, cap, true,true);
-    Undo::write_log(id,uc,c_joined,"swapclass",cap,"",c_left);
+    Undo::write_log(id,uc,c_joined,"swapclass",cap);
 }
 
 void Changes::call_multi(string id, int cap, queue<string> operations) {
@@ -606,11 +627,4 @@ bool Changes::check_conflicts(string cc, string uc, string id) {
         }
     }
     return true;
-}
-
-void Changes::call_joinuc_force(string id, string name, string uc, string cl)
-{
-    ofstream filew;
-    filew.open("../schedule/students_classes.csv", ios::out | ios::app);
-    filew << id << "," << name << "," << uc << "," << cl << endl;
 }

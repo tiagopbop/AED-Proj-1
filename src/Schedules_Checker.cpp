@@ -4,7 +4,6 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-#include <algorithm>
 
 
 void Schedules_Checker::check_schedule_student(string id) {
