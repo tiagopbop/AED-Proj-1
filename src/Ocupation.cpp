@@ -113,7 +113,7 @@ void Ocupation::check_students_by_UCs(const string& in)
     cout << "\033[1;32mNumber of students registered in at least \033[0m" << in << "\033[1;32m UCs: \033[0m" << count << endl << endl;
 }
 
-void Ocupation::check_class_occupation(const string& id) {
+void Ocupation::check_class_occupation(const string& id,const string& uc) {
 
     ifstream file("../schedule/students_classes.csv");
 
@@ -129,9 +129,6 @@ void Ocupation::check_class_occupation(const string& id) {
     }
 
     getline(file, line);
-
-    cout << endl;
-    cout << "\033[1;32mNumber of students registered in class \033[0m" << id <<"\033[1;32m: \033[0m";
 
     while (getline(file, line)) {
 
@@ -152,13 +149,12 @@ void Ocupation::check_class_occupation(const string& id) {
 
         auto it = find(past_names.begin(), past_names.end(), row[1]);
 
-        if (row[3] == id && it == past_names.end()) {
+        if (row[3] == id && it == past_names.end() && row[2] == uc) {
             past_names.push_back(row[1]);
             count++;
         }
     }
-
-    cout << count << endl << endl;
+    cout << endl << "\033[1;32mNumber of students registered in class \033[0m"<< id << "\033[1;32m of UC \033[0m" << uc << "\033[1;32m: \033[0m" << count << endl << endl;
 }
 
 int Ocupation::check_class_occupation_per_uc(const string& id,const string& uc) {

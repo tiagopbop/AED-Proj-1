@@ -73,8 +73,8 @@ int main() {
 
                 if (decision == 1) {
 
-                    cout << "\033[1;34mWhich UC: \033[0m";
-                    cin >> in;
+                    cout << "\033[1;34mWhich class: \033[0m";
+                    cin >> in2;
                     cout << "\033[1;34mWhich class: \033[0m";
                     cin >> in2;
                     ListStudents::check_class_students(in, in2);
@@ -124,9 +124,11 @@ int main() {
 
                 if (decision == 1) {
 
+                    cout << "\033[1;34mWhich UC: \033[0m";
+                    cin >> in2;
                     cout << "\033[1;34mWhich class: \033[0m";
                     cin >> in;
-                    Ocupation::check_class_occupation(in);
+                    Ocupation::check_class_occupation(in, in2);
 
                 }
                 else if (decision == 2) {

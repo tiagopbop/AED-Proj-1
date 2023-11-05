@@ -1,0 +1,16 @@
+# ninja log v5
+7	697	1699210362365812548	CMakeFiles/Remake.dir/src/Undo.cpp.o	65fede5e02f5dcbf
+0	705	1699210362365812548	CMakeFiles/Remake.dir/src/main.cpp.o	5a94ad3f3f49de0d
+3	1299	1699210363021753721	CMakeFiles/Remake.dir/src/Changes.cpp.o	289354437034b386
+698	1577	1699210363209736894	CMakeFiles/Remake.dir/src/Ocupation.cpp.o	6a39729a8d326fe0
+706	1594	1699210363209736894	CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o	ef778359ee38a6ac
+1299	1861	1699210363585703247	CMakeFiles/Remake.dir/src/ListStudents.cpp.o	f7dcd2cf94e7e5dd
+1861	1966	1699210363677695011	Remake	c912e305dfaeba81
+1	425	1699210945530599587	CMakeFiles/Remake.dir/src/main.cpp.o	5a94ad3f3f49de0d
+425	550	1699210945654596030	Remake	c912e305dfaeba81
+4	475	1699211268619728253	CMakeFiles/Remake.dir/src/main.cpp.o	5a94ad3f3f49de0d
+6	741	1699211268879724287	CMakeFiles/Remake.dir/src/Ocupation.cpp.o	6a39729a8d326fe0
+5	1030	1699211269155720076	CMakeFiles/Remake.dir/src/Changes.cpp.o	289354437034b386
+1030	1127	1699211269271718311	Remake	c912e305dfaeba81
+1	687	1699211298339287854	CMakeFiles/Remake.dir/src/Ocupation.cpp.o	6a39729a8d326fe0
+687	803	1699211298447286300	Remake	c912e305dfaeba81
