@@ -16,7 +16,7 @@ private:
 public:
 
     static void set_cjoined(string c);
-    
+
     static void call_joinuc(string id, string uc, int cap, string cc = "", bool sw = false, bool undo = false);
 
     static void set_cleft(string c);
@@ -38,5 +38,7 @@ public:
     void call_joinuc_force(string id, string name, string uc, string cl);
 };
 
+string Changes::c_joined;
+string Changes::c_left;
 
 #endif //REMAKE_CHANGES_H

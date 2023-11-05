@@ -4,6 +4,7 @@
 #include "Ocupation.h"
 #include "ListStudents.h"
 #include <queue>
+#include "Undo.h"
 
 using namespace std;
 
@@ -225,9 +226,6 @@ int main() {
 
                 cout << "\033[1;36m[ 1 ]\033[0m" << " Undo last operation" <<endl;
                 cout << "\033[1;36m[ 2 ]\033[0m" << " Leave UC" <<endl;
-                cout << "\033[1;36m[ 3 ]\033[0m" << " Swap UC" << endl;
-                cout << "\033[1;36m[ 4 ]\033[0m" << " Swap class" << endl;
-                cout << "\033[1;36m[ 5 ]\033[0m" << " Queued operations" << endl;
                 cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Go back\033[0m" << endl;
 
                 cout << endl << "\033[1;34mDecision: \033[0m";

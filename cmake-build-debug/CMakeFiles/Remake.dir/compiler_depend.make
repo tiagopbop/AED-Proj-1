@@ -165,7 +165,6 @@ CMakeFiles/Remake.dir/src/Changes.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/uses_allocator.h \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h \
   /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.h \
   /usr/include/c++/11/fstream \
   /usr/include/c++/11/istream \
@@ -1743,7 +1742,8 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
   /usr/include/c++/11/bits/uses_allocator.h \
   /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.h \
   /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.h \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h
+  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h \
+  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h
 
 
 /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp:
@@ -1816,10 +1816,6 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
 
 /usr/include/c++/11/ios:
 
-/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h:
-
-/usr/include/c++/11/fstream:
-
 /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp:
 
 /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h:
@@ -1881,6 +1877,10 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
 /usr/include/c++/11/cstdint:
+
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h:
+
+/usr/include/c++/11/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
@@ -2100,6 +2100,12 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h:
+
+/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/alloca.h:
@@ -2215,9 +2221,3 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/c++/11/deque:
-
-/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h:

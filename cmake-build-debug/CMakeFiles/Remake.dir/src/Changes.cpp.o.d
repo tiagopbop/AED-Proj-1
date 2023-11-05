@@ -138,7 +138,6 @@ CMakeFiles/Remake.dir/src/Changes.cpp.o: \
  /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/c++/11/bits/uses_allocator.h \
- /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h \
  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.h \
  /usr/include/c++/11/fstream /usr/include/c++/11/istream \
  /usr/include/c++/11/ios /usr/include/c++/11/exception \

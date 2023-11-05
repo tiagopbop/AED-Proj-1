@@ -13,7 +13,6 @@ void Undo::set_lastid(string id) {
 
 void Undo::set_lastuc(string uc) {
     last_uc = uc;
-
 }
 
 void Undo::set_lastclass(string cc) {
@@ -25,14 +24,6 @@ void Undo::set_lastop(string op) {
 }
 void Undo::set_ucl(string uc) {
     ucl = uc;
-}
-
-void Undo::set_name(string name) {
-    last_name = name;
-}
-
-void Undo::set_clleft(string cll) {
-    cl_left = cll;
 }
 
 void Undo::write_log(string id, string ucj, string cc, string op,int cap, string ucl, string cl_l) {
@@ -50,7 +41,6 @@ void Undo::write_log(string id, string ucj, string cc, string op,int cap, string
     set_lastclass(cc);
     set_lastop(op);
     set_ucl(ucl);
-    set_clleft(cl_l);
     logia << id << "," << ucj << "," << cc << "," << op << endl;
     logia.close();
 }
@@ -131,7 +121,7 @@ void Undo::go_back(int cap) {
             Changes::call_leaveuc(last_id, last_uc, "", "", cap, false, false);
             Changes::call_joinuc(last_id,ucl,cap, last_class, false, true);
     }
-    else if( last_op == "swapclass")
+    else if(last_op == "swapclass")
     {
         Changes::call_leaveuc(last_id, last_uc, "", "", cap, false, false);
         Changes::call_joinuc(last_id,last_uc, cap, last_class, false, true);
