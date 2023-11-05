@@ -65,7 +65,7 @@ void Undo::go_back(int cap) {
     rawr.push_back(a);
 
 
-    ifstream file("../schedule/students_classes.csv");
+    ifstream file("../schedule/log.csv");
     if (!file.is_open()) {
         cerr << "FAILED TO OPEN THE FILE" << endl;
         return;
