@@ -21,7 +21,7 @@ void Changes::set_cleft(string c)
     c_left = c;
 }
 
-void Changes::call_joinuc(const string& id, const string& uc, int cap, const string& cc, bool sw, bool undo, bool trigger) {
+void Changes::call_joinuc(const string& id, const string& uc, int cap, const string& cc, bool sw, bool undo) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
@@ -81,13 +81,8 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
 
         if (row[0] == id) {
             if (row[2] == uc) {
-                if (!sw || trigger) {
+                if (!sw) {
                     cout << "\033[1;33mYou are already in that UC\033[0m" << endl << endl;
-                    success = false;
-                    return;
-                }
-                if (sw && !trigger) {
-                    cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
                     success = false;
                     return;
                 }
@@ -268,13 +263,10 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
         rawr.push_back(a);
     }
 
-    if(!in_uc || (!second_button && sw)) {
+    if(!in_uc && !second_button) {
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
         if (sw) {
-            if (trigger) {
-                success = false;
-            }
-            Changes::call_leaveuc(id, ucj, "", "", cap, true, true , true);
+            Changes::call_leaveuc(id, ucj, "", "", cap, true, true, true);
         }
         return;
     }
@@ -311,14 +303,11 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
 
 void Changes::call_swapuc(const string& id, const string& ucl, const string& ucj, int cap) {
     success = true;
-    Changes::call_joinuc(id, ucj, cap,"", true, false, true);
+    Changes::call_joinuc(id, ucj, cap,"", true, false);
     if (!success) {
         return;
     }
     Changes::call_leaveuc(id, ucl, ucj, "", cap,false, true);
-    if (!success) {
-        return;
-    }
     Undo::write_log(id,ucj,c_joined,"swapuc");
 }
 
@@ -329,9 +318,6 @@ void Changes::call_swapclass(const string& id, const string& uc, int cap) {
         return;
     }
     Changes::call_leaveuc(id, uc, "", c_joined, cap, true,true);
-    if (!success) {
-        return;
-    }
     Undo::write_log(id,uc,c_joined,"swapclass");
 }
 
