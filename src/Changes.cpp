@@ -267,6 +267,8 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
         if (sw) {
             Changes::call_leaveuc(id, ucj, "", "", cap, true, true , true);
+            success = false;
+            return;
         }
         return;
     }
@@ -308,6 +310,9 @@ void Changes::call_swapuc(const string& id, const string& ucl, const string& ucj
         return;
     }
     Changes::call_leaveuc(id, ucl, ucj, "", cap,false, true);
+    if (!success) {
+        return;
+    }
     Undo::write_log(id,ucj,c_joined,"swapuc");
 }
 
@@ -318,6 +323,9 @@ void Changes::call_swapclass(const string& id, const string& uc, int cap) {
         return;
     }
     Changes::call_leaveuc(id, uc, "", c_joined, cap, true,true);
+    if (!success) {
+        return;
+    }
     Undo::write_log(id,uc,c_joined,"swapclass");
 }
 
