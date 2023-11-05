@@ -21,7 +21,7 @@ void Changes::set_cleft(string c)
     c_left = c;
 }
 
-void Changes::call_joinuc(const string& id, const string& uc, int cap, const string& cc, bool sw, bool undo) {
+void Changes::call_joinuc(const string& id, const string& uc, int cap, const string& cc, bool sw, bool undo, bool trigger) {
 
     ifstream file1("../schedule/students_classes.csv");
     ifstream file2("../schedule/classes_per_uc.csv");
@@ -81,7 +81,7 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
 
         if (row[0] == id) {
             if (row[2] == uc) {
-                if (!sw) {
+                if (!sw || trigger) {
                     cout << "\033[1;33mYou are already in that UC\033[0m" << endl << endl;
                     return;
                 }
@@ -302,7 +302,7 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
 
 void Changes::call_swapuc(const string& id, const string& ucl, const string& ucj, int cap) {
     success = true;
-    Changes::call_joinuc(id, ucj, cap,"", true, false);
+    Changes::call_joinuc(id, ucj, cap,"", true, false, true);
     if (!success) {
         return;
     }

@@ -18,7 +18,7 @@ public:
 
     static void set_cjoined(string c);
 
-    static void call_joinuc(const string& id, const string& uc, int cap, const string& cc = "", bool sw = false, bool undo = false);
+    static void call_joinuc(const string& id, const string& uc, int cap, const string& cc = "", bool sw = false, bool undo = false, bool trigger = false);
 
     static void set_cleft(string c);
 
