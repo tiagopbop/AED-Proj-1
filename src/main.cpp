@@ -4,7 +4,6 @@
 #include "Ocupation.h"
 #include "ListStudents.h"
 #include <queue>
-#include "Undo.h"
 
 using namespace std;
 
@@ -234,10 +233,10 @@ int main() {
 
                 switch (decision) {
                     case 1:
-
+/*
                         Undo::go_back(cap);
                         break;
-
+*/
                     case 0:
 
                         break;

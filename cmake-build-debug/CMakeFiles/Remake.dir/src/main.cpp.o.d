@@ -157,5 +157,4 @@ CMakeFiles/Remake.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/uses_allocator.h \
  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.h \
  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.h \
- /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h \
- /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h
+ /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h

@@ -24,11 +24,5 @@ public:
 
 };
 
-string Undo::last_id;
-string Undo::last_uc;
-string Undo::last_class;
-string Undo::last_op;
-string Undo::ucl;
-string Undo::last_name;
 
 #endif //REMAKE_UNDO_H

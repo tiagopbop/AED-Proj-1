@@ -1123,7 +1123,6 @@ CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o: /home/guaxinim/CLionProjects/
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -1160,37 +1159,11 @@ CMakeFiles/Remake.dir/src/Schedules_Checker.cpp.o: /home/guaxinim/CLionProjects/
   /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Class.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/algorithm \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/bits/stl_algo.h \
-  /usr/include/c++/11/bits/algorithmfwd.h \
-  /usr/include/c++/11/bits/stl_heap.h \
-  /usr/include/c++/11/bits/stl_tempbuf.h \
-  /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
-  /usr/include/c++/11/functional \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/bits/std_function.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/node_handle.h \
-  /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/erase_if.h \
-  /usr/include/c++/11/pstl/execution_defs.h
+  /usr/include/c++/11/bits/vector.tcc
 
 CMakeFiles/Remake.dir/src/Student.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Student.cpp \
   /usr/include/stdc-predef.h \
@@ -1347,7 +1320,7 @@ CMakeFiles/Remake.dir/src/Student.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/
 
 CMakeFiles/Remake.dir/src/Undo.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp \
   /usr/include/stdc-predef.h \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h \
+  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Changes.h \
   /usr/include/c++/11/string \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1497,7 +1470,6 @@ CMakeFiles/Remake.dir/src/Undo.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Changes.h \
   /usr/include/c++/11/vector \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
@@ -1545,7 +1517,8 @@ CMakeFiles/Remake.dir/src/Undo.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/sstream \
-  /usr/include/c++/11/bits/sstream.tcc
+  /usr/include/c++/11/bits/sstream.tcc \
+  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h
 
 CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -1742,8 +1715,7 @@ CMakeFiles/Remake.dir/src/main.cpp.o: /home/guaxinim/CLionProjects/Clean_AED/Pro
   /usr/include/c++/11/bits/uses_allocator.h \
   /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Schedules_Checker.h \
   /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Ocupation.h \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h \
-  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.h
+  /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/ListStudents.h
 
 
 /home/guaxinim/CLionProjects/Clean_AED/ProjAED/src/Undo.cpp:
