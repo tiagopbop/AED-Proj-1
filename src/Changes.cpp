@@ -104,7 +104,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, name, uc, cc, "joinuc", cap);
+                    Undo::write_log(id, uc, cc, "joinuc", cap);
                     cout << endl << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;
@@ -147,7 +147,7 @@ void Changes::call_joinuc(string id, string uc, int cap, string cc, bool sw, boo
                 if (undo && Changes::check_conflicts(cc, uc, id)) {
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv",ios::out | ios::app);
-                    Undo::write_log(id, name, uc, cc, "joinuc", cap);
+                    Undo::write_log(id, uc, cc, "joinuc", cap);
                     cout << endl << "\033[1;32mYou were assigned back to the class successfully\033[0m" << endl << endl;
                     Changes::set_cjoined(cc);
                     filew << id << "," << name << "," << uc << "," << cc << endl;

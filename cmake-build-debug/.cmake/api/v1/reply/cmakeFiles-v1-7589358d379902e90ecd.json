@@ -21,11 +21,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeUnixFindMake.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake"
 		},
 		{
@@ -549,21 +544,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeFindCodeBlocks.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/ProcessorCount.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake"
 		},
 		{
@@ -758,8 +738,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/guaxinim/CLionProjects/Clean_AED/ProjAED/cmake-build-debug",
-		"source" : "/home/guaxinim/CLionProjects/Clean_AED/ProjAED"
+		"build" : "/home/loading/Desktop/AED/Remake/cmake-build-debug",
+		"source" : "/home/loading/Desktop/AED/Remake"
 	},
 	"version" : 
 	{

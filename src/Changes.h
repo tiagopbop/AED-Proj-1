@@ -10,7 +10,7 @@ using namespace std;
 
 class Changes {
 private:
-    static string c_joined;
+     static string c_joined;
     static string c_left;
 
 public:
