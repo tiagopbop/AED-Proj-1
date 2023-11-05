@@ -28,7 +28,7 @@ class Class {
         void set_Weekday(string wd);
         void set_StartHour(float sh);
         void set_Duration(float dr);
-        string set_type(string ty);
+        void set_type(string ty);
 };
 
 

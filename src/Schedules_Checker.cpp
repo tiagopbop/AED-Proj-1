@@ -1,10 +1,8 @@
 #include "Schedules_Checker.h"
 #include <string>
-#include "Student.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include "Class.h"
 #include <vector>
 #include <algorithm>
 

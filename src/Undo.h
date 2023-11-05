@@ -6,12 +6,12 @@ using namespace std;
 
 class Undo {
 private:
-    static string last_id;
-    static string last_uc;
-    static string last_class;
-    static string last_op;
-    static string ucl;
-    static string last_name;
+    inline static string last_id;
+    inline static string last_uc;
+    inline static string last_class;
+    inline static string last_op;
+    inline static string ucl;
+    inline static string last_name;
 
 public:
     static void set_lastid(string id);
@@ -24,11 +24,6 @@ public:
 
 };
 
-string Undo::last_id;
-string Undo::last_uc;
-string Undo::last_class;
-string Undo::last_op;
-string Undo::ucl;
-string Undo::last_name;
+
 
 #endif //REMAKE_UNDO_H

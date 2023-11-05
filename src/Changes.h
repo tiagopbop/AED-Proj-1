@@ -10,8 +10,8 @@ using namespace std;
 
 class Changes {
 private:
-     static string c_joined;
-    static string c_left;
+     inline static string c_joined;
+    inline static string c_left;
 
 public:
 
@@ -38,7 +38,5 @@ public:
     void call_joinuc_force(string id, string name, string uc, string cl);
 };
 
-string Changes::c_joined;
-string Changes::c_left;
 
 #endif //REMAKE_CHANGES_H
