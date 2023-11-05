@@ -52,7 +52,7 @@ void Ocupation::most_students(string in) {
             }
         }
 
-        cout << topCount << "\033[1;32m students from \033[0m" << cl[topIndex] << " of " << uc[topIndex] << endl;
+        cout << topCount << "\033[1;32m students from \033[0m" << cl[topIndex] << "\033[1;32m of \033[0m" << uc[topIndex] << endl;
         count[topIndex] = 0;
     }
     cout << endl;
