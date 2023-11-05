@@ -144,7 +144,12 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
                 }
                 else {
                     cout << endl << "\033[1;31mWe could not assign you to the chosen class due to schedule conflicts\033[0m\n" << endl;
-                    Changes::call_joinuc(id, uc, cap);
+                    if (!sw) {
+                        Changes::call_joinuc(id, uc, cap);
+                    }
+                    else {
+                        Changes::call_joinuc(id, uc, cap, "", true);
+                    }
                 }
             }
             else {
@@ -169,8 +174,8 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
                     if (!sw) {
                         Undo::write_log(id,uc,classes[0],"joinuc");
                         cout << "\033[1;32mYou were assigned to the following class as it was the only one available:  \033[0m" << classes[0] << endl << endl;
-                        Changes::set_cjoined(classes[0]);
                     }
+                    Changes::set_cjoined(classes[0]);
                     ofstream filew;
                     filew.open("../schedule/students_classes.csv", ios::out | ios::app);
                     filew << id << "," << name << "," << uc << "," << classes[0] << endl;
