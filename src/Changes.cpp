@@ -86,6 +86,11 @@ void Changes::call_joinuc(const string& id, const string& uc, int cap, const str
                     success = false;
                     return;
                 }
+                if (sw && !trigger) {
+                    cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
+                    success = false;
+                    return;
+                }
             }
             ucs.push_back(row[2]);
             name = row[1];
@@ -266,9 +271,10 @@ void Changes::call_leaveuc(const string& id, const string& uc, const string& ucj
     if(!in_uc || (!second_button && sw)) {
         cout << "\033[1;33mYou are not enrolled in that UC\033[0m" << endl << endl;
         if (sw) {
+            if (trigger) {
+                success = false;
+            }
             Changes::call_leaveuc(id, ucj, "", "", cap, true, true , true);
-            success = false;
-            return;
         }
         return;
     }
