@@ -24,7 +24,7 @@ int main() {
     cout << "\033[1;36m[ 5 ]\033[0m" << " Check occupation of a given class, UC or year" << endl;
     cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
     cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
-    cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
+    cout << "\033[1;33m[ 8 ]\033[0m" << " Make changes" << endl;
     cout << "\033[1;33m[ 9 ]\033[0m" << " Technical options" << endl;
     cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
     cout << endl;
@@ -299,7 +299,7 @@ int main() {
         cout << "\033[1;36m[ 5 ]\033[0m" << " Check occupation of a given class, UC or year" << endl;
         cout << "\033[1;36m[ 6 ]\033[0m" << " Check the UCs with greatest number of students" << endl;
         cout << "\033[1;36m[ 7 ]\033[0m" << " Check the classes with the greatest number of students" << endl;
-        cout << "\033[1;36m[ 8 ]\033[0m" << " Make changes" << endl;
+        cout << "\033[1;33m[ 8 ]\033[0m" << " Make changes" << endl;
         cout << "\033[1;33m[ 9 ]\033[0m" << " Technical options" << endl;
         cout << "\033[0;31m[ 0 ]\033[0m" << "\033[0;31m Quit\033[0m" << endl;
         cout << endl;
