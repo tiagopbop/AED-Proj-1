@@ -1,5 +1,4 @@
 #include "Changes.h"
-#include "Student.h"
 #include "Ocupation.h"
 #include <vector>
 #include <fstream>
@@ -12,12 +11,12 @@
 
 using namespace std;
 
-void Changes:: set_cjoined(string c)
+void Changes::set_cjoined(string c)
 {
     c_joined = c;
 }
 
-void Changes:: set_cleft(string c)
+void Changes::set_cleft(string c)
 {
     c_left = c;
 }
